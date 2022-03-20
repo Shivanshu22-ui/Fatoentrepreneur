@@ -1,0 +1,28 @@
+.home{
+    height: 100%;
+    width: 100%;
+    position: relative;
+   padding: 0 20px;
+}
+.herobgImage{
+    height: 65vh;
+}
+.herobgImage img{
+    width: 100%;
+    filter: brightness(60%);
+}
+
+.home .content{
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute !important;
+    top: 0;
+    color: rgb(255, 255, 255);
+}

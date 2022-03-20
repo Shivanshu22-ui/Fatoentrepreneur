@@ -1,0 +1,32 @@
+.navBar{
+    background-color: #ffffff;
+}
+.navBar .logo{
+    height: 65px;
+    width: 65px;    
+}
+.navBar .logo-text{
+    font-weight: 700;
+    font-size: 25px !important;
+}
+.navBar ul{
+    list-style: none;
+}
+.navBar ul li{
+    color: #0077b6;
+    font-weight: 600;
+}
+.navBar ul li a{
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: 600;
+
+}
+.navBar button{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: #48cae4;
+}
