@@ -1,6 +1,8 @@
 import React from 'react'
 import Services from './Services';
 import PopularCity from './PopularCity'
+import Footer from '../Footer/Footer';
+import Stories from './Stories';
 import "./HomePage.css"
 import bgimage from "./hero.png"
 
@@ -25,6 +27,8 @@ function Homepage() {
       </div>
       <Services/>
       <PopularCity/>
+      {/* <Stories/> */}
+      <Footer/>
     </div>
   )
 }

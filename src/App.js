@@ -1,6 +1,7 @@
 import Navbar from './Navbar/Navbar';
 import Homepage from './HomePage/Homepage';
 import Services from './HomePage/Services';
+import Places from './Places/Places';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route path='/Places'>
             <Navbar/>
+            <Places/>
           </Route>
           <Route path='/Stories'>
             <Navbar/>
