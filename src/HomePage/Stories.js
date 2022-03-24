@@ -224,24 +224,24 @@ function Stories() {
         <div className="card-column column-0">
           <div className="card card-color-0">
             <div className="border"></div>
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-00.jpg" />
+            <img src="https://cdn.traveltalktours.com/wp-content/uploads/2020/11/1920x1080-5-e1609206442272.jpg" />
             <h1>Hey now, you're an allstar</h1>
           </div>
           <div className="card card-color-2">
             <div className="border"></div>
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-02.jpg" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo58Q2VDIj3kLj_ZRQhW5o3nXudbONGW_htw&usqp=CAU" />
             <h1>Hey now, you're a rock star</h1>
           </div>
         </div>
         <div className="card-column column-1">
           <div className="card card-color-1">
             <div className="border"></div>
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-01.jpg" />
+            <img src="https://wwwnc.cdc.gov/travel/images/hiker-ocean-extreme.jpg" />
             <h1>Get your game on, go play</h1>
           </div>
           <div className="card card-color-3">
             <div className="border"></div>
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-03.jpg" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSebQygtLd53uan1NeMX9M6eBPRUxLBAvtt0A&usqp=CAU" />
             <h1>Get the show on, get paid</h1>
           </div>
         </div>
