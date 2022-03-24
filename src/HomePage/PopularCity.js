@@ -117,7 +117,7 @@ export default function Recommend() {
 }
 
 const Section = styled.section`
-  padding: 2rem 0;
+  padding: 2rem 0 7rem;
   .title {
     text-align: center;
     text-transform: uppercase;
@@ -126,7 +126,7 @@ const Section = styled.section`
   .packages {
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 2rem 0 ;
     ul {
       display: flex;
       list-style-type: none;
@@ -144,14 +144,14 @@ const Section = styled.section`
   .destinations {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5rem;
-    padding: 0 3rem;
+    gap: 8rem;
+    padding: 0 4rem;
     .destination {
       padding: 25px;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      background-color: #fafafa;
+      background-color: #68d3e81f;
       border-radius: 1rem;
       transition: 0.3s ease-in-out;
     //   &:hover {
@@ -168,6 +168,9 @@ const Section = styled.section`
       h3{
           font-size:22px;
           color : #0077b6;;
+      }
+      p{
+        height:50px
       }
       .info {
         display: flex;

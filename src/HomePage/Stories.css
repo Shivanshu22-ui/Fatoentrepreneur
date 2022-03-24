@@ -2,7 +2,7 @@
 ** Layout, Text & Colors 
 */
 .stories{
-  height: 160vh;
+  height: 170vh;
 }
 p {
   line-height: 1.5;
@@ -17,7 +17,7 @@ p {
 .card-column {
   width: 50%;
   float: left;
-  padding: 4%;
+  padding: 6%;
   box-sizing: border-box;
 }
 
@@ -26,7 +26,7 @@ p {
 }
 
 .card {
-  width: 92%;
+  width: 80%;
   max-width: 340px;
   margin-left: auto;
   margin-right: auto;
@@ -52,6 +52,7 @@ p {
   position: relative;
   padding: 190px 0px 100px 10px;
   width: 90%;
+  font-size: 1.7rem;
 }
 
 .card > img {
