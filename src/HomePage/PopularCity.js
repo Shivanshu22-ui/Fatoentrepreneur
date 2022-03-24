@@ -73,7 +73,7 @@ export default function Recommend() {
   return (
     <Section id="recommend">
       <div className="title">
-        <p>Popular Cities</p>
+        <h1>Popular Cities</h1>
       </div>
       <div className="packages">
         <ul>
