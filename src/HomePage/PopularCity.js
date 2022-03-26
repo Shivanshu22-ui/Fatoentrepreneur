@@ -14,7 +14,7 @@ export default function Recommend() {
   const data = [
     {
       image: Destination1,
-      title: "Netherlans Antilles",
+      title: "Netherlands Antilles",
       subTitle: " the Netherlands Antilles, an autonomous  ",
       cost: "$ 38,800",
       duration: "Anytime",
@@ -134,6 +134,7 @@ const Section = styled.section`
       li {
         padding: 1rem 2rem;
         border-bottom: 0.1rem solid black;
+        cursor:pointer;
       }
       .active {
         border-bottom: 4px solid #1683d0;

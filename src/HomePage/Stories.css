@@ -3,6 +3,10 @@
 */
 .stories{
   height: 170vh;
+  width: 100vw;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
 }
 p {
   line-height: 1.5;

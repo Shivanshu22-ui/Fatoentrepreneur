@@ -28,7 +28,7 @@ function Homepage() {
       <Services/>
       <PopularCity/>
       <Stories/>
-      <Footer className="pt-4"/>
+      <Footer/>
     </div>
   )
 }
