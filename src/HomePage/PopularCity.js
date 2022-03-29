@@ -94,7 +94,8 @@ export default function Recommend() {
           return (
             <div className="destination">
               <img src={destination.image} alt="" />
-              <h3>{destination.title}</h3>
+              <h3>{destination.city}</h3>
+              <span>{destination.title}</span>
               <p>{destination.subTitle}</p>
               <div className="info">
                 <div className="services">
@@ -105,7 +106,7 @@ export default function Recommend() {
                 <h4>{destination.cost}</h4>
               </div>
               <div className="distance">
-                <span>{destination.city}</span>
+                
                 <span>{destination.duration}</span>
               </div>
             </div>
@@ -168,10 +169,18 @@ const Section = styled.section`
       }
       h3{
           font-size:22px;
-          color : #0077b6;;
+          color : #0077b6;
+          margin : 0;
+      }
+      span{
+          font-weight:600;
+          color: #5c5b5b;
+          position :relative ;
+          top : -5px;
       }
       p{
-        height:50px
+        height:50px;
+        font-weight: 600;
       }
       .info {
         display: flex;
@@ -195,6 +204,9 @@ const Section = styled.section`
         justify-content: space-between;
         span{
             font-weight:600;
+            color : black;
+            position :relative ;
+            top : 0px;
         }
       }
     }

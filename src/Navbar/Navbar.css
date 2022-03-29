@@ -1,5 +1,6 @@
 .navBar{
     background-color: #ffffff;
+    box-shadow: 5px 5px 5px  #88888836;
 }
 .navBar .logo{
     height: 65px;
@@ -12,11 +13,12 @@
 .navBar ul{
     list-style: none;
 }
-.navBar ul li{
+.navBar li{
     color: #0077b6;
     font-weight: 600;
+    list-style: none;
 }
-.navBar ul li a{
+.navBar  li a{
     text-decoration: none;
     color: #0077b6;
     font-weight: 600;
