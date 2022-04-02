@@ -31,7 +31,7 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <div className="col-3 pt-2 d-flex flex-wrap justify-content-center align-items-center">
+          <div className="col-3 pt-1 d-flex flex-wrap justify-content-center align-items-center">
             <li className="m-2 p-2">
               <Link to="/Login"> LogIn/SignUp</Link>
             </li>
