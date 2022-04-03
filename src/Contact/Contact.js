@@ -54,7 +54,7 @@ function Contact() {
             <div className="col-6">
             <div className="contact-form my-5 mx-2" >
               <div className="contact-form-text px-4 pt-2 ">
-                <h1 className="my-3 highlight contactHeading">Get <span className="highlightblue">In Touch</span></h1>
+                <h1 className="my-3 highlight contactHeading"> <span className='us'>Get</span> In Touch</h1>
                 <p className="ml-2 contact-page-content "><span className="highlightred">Not literally though.</span><span role="img" aria-label="Emoji">😷</span></p>
                 <p className="ml-2 contact-page-content ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis molestiae consequatur maiores voluptatibus ratione ab error!</p>
               </div>
