@@ -51,7 +51,30 @@ function Contact() {
                 )
               })}
             </div>
-            <div className="col-6"></div>
+            <div className="col-6">
+            <div className="contact-form my-5 mx-2" >
+              <div className="contact-form-text px-4 pt-2 ">
+                <h1 className="my-3 highlight contactHeading">Get <span className="highlightblue">In Touch</span></h1>
+                <p className="ml-2 contact-page-content "><span className="highlightred">Not literally though.</span><span role="img" aria-label="Emoji">😷</span></p>
+                <p className="ml-2 contact-page-content ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis molestiae consequatur maiores voluptatibus ratione ab error!</p>
+              </div>
+              <form className="form-horizontal p-4" >
+                <div className="form-group my-2">
+                  <textarea className="form-control" rows="6" id="queries" placeholder="Write your queries here." required/>
+                </div>
+                <div className="form-group my-2">
+                  <input type="email" className="form-control" id="email" placeholder="Email"   required/>
+                </div>
+                <div className="col-12 d-flex p-0 flex-row justify-content-between">
+                  <div className="form-group my-2">
+                    <input type="text" className="form-control" id="name" placeholder="Name" required/>
+                  </div>
+                  <button type="submit" className="align-items-center contact-form-button btn-danger" >Send <i className="far fa-paper-plane"/>
+                  </button>
+                </div>
+              </form>
+            </div>
+            </div>
           </div>
         </div>
         </div>
