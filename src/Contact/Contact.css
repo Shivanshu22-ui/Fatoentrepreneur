@@ -117,4 +117,11 @@
   .details {
     width: 100%;
 }
+.contactInfo-cards
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 }

@@ -47,7 +47,7 @@ function Contact() {
         </div>
         <div className="contactInfo px-5">
           <div className="row px-4">
-            <div className="col-lg-6 col-md-6 col-sm-12 p-4  d-sm-flex justify-centent-center align-items-start">
+            <div className="col-lg-6 col-md-6 col-sm-12 p-4 contactInfo-cards ">
               {contactInfo.map((contact, index) => {
                 return (
                   <div className="details row mt-4">
