@@ -1,31 +1,40 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import "./DropDownNav.css"
 import { Link } from 'react-router-dom'
-
 function DropDownNav() {
+    const MenuItems = [
+        {
+          title: 'Marketing',
+          path: '/marketing',
+          cName: 'dropdown-link'
+        },
+        {
+          title: 'Consulting',
+          path: '/consulting',
+          cName: 'dropdown-link'
+        },
+        {
+          title: 'Design',
+          path: '/design',
+          cName: 'dropdown-link'
+        },
+        {
+          title: 'Development',
+          path: '/development',
+          cName: 'dropdown-link'
+        }
+      ];
+
+
+      function Dropdown() {
+        const [click, setClick] = useState(false);
+      
+        const handleClick = () => setClick(!click);
+      }
   return (
-    <div><ul class="nav nav-tabs">
-    <li class="nav-item">
-      <Link class="nav-link active" aria-current="page" to="#">Active</Link >
-    </li>
-    <li class="nav-item dropdown">
-      <Link class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-expanded="false">Dropdown</Link >
-      <ul class="dropdown-menu">
-        <li><Link class="dropdown-item" to="#">Action</Link ></li>
-        <li><Link class="dropdown-item" to="#">Another action</Link ></li>
-        <li><Link class="dropdown-item" to="#">Something else here</Link ></li>
-        
-        <li><Link class="dropdown-item" to="#">Separated link</Link ></li>
-      </ul>
-    </li>
-    <li class="nav-item">
-      <Link class="nav-link" to="#">Link</Link >
-    </li>
-    <li class="nav-item">
-      <Link class="nav-link disabled">Disabled</Link >
-    </li>
-  </ul></div>
-  )
+   <div>
+   </div>
+  );
 }
 
-export default DropDownNav
+export default DropDownNav;
