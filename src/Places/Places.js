@@ -6,6 +6,7 @@ import "./Places.css"
 function Places() {
   return (
     <div>
+      <DropDownNav/>
         <Footer/>
     </div>
   )
