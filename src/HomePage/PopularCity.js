@@ -6,9 +6,7 @@ import Destination3 from "./Destination3.png";
 import Destination4 from "./Destination4.png"; 
 import Destination5 from "./Destination5.png";
 import Destination6 from "./Destination6.png";
-import info1 from "./info1.png";
-import info2 from "./info2.png";
-import info3 from "./info3.png";
+import { PopularCityCards } from "../Cards/Cards";
 
 export default function Recommend() {
   const data = [
@@ -92,24 +90,14 @@ export default function Recommend() {
       <div className="destinations">
         {data.map((destination) => {
           return (
-            <div className="destination">
-              <img src={destination.image} alt="" />
-              <h3>{destination.city}</h3>
-              <span>{destination.title}</span>
-              <p>{destination.subTitle}</p>
-              <div className="info">
-                <div className="services">
-                  <img src={info1} alt="" />
-                  <img src={info2} alt="" />
-                  
-                </div>
-                <h4>{destination.cost}</h4>
-              </div>
-              <div className="distance">
-                
-                <span>{destination.duration}</span>
-              </div>
-            </div>
+            <PopularCityCards
+              image = {destination.image}
+              city =  {destination.city}
+              title = {destination.title}
+              subTitle = {destination.subTitle}
+              cost = {destination.cost}
+              duration = {destination.duration}
+            />
           );
         })}
       </div>
@@ -148,68 +136,7 @@ const Section = styled.section`
     grid-template-columns: repeat(3, 1fr);
     gap: 8rem;
     padding: 0 4rem;
-    .destination {
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      background-color: #68d3e81f;
-      border-radius: 1rem;
-      transition: 0.3s ease-in-out;
-    //   &:hover {
-    //     transform: translateX(0.4rem) translateY(-1rem);
-    //     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    //   }
-      img {
-        width: 100%;
-        transition: 0.3s ease-in-out;
-        &:hover{
-            transform:scale(1.02);
-        }
-      }
-      h3{
-          font-size:22px;
-          color : #0077b6;
-          margin : 0;
-      }
-      span{
-          font-weight:600;
-          color: #5c5b5b;
-          position :relative ;
-          top : -5px;
-      }
-      p{
-        height:50px;
-        font-weight: 600;
-      }
-      .info {
-        display: flex;
-        align-items: center;
-        .services {
-          display: flex;
-          gap: 0.3rem;
-          img {
-            border-radius: 1rem;
-            background-color: #48cae4d1;
-            width: 2rem;
-            /* padding: 1rem; */
-            padding: 0.3rem 0.4rem;
-          }
-        }
-        display: flex;
-        justify-content: space-between;
-      }
-      .distance {
-        display: flex;
-        justify-content: space-between;
-        span{
-            font-weight:600;
-            color : black;
-            position :relative ;
-            top : 0px;
-        }
-      }
-    }
+    
   }
   @media screen and (min-width: 280px) and (max-width: 768px) {
     .packages {

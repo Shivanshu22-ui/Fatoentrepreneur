@@ -1,0 +1,59 @@
+
+    .destination {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      background-color: #68d3e81f;
+      border-radius: 1rem;
+      transition: 0.3s ease-in-out;
+    }
+    .destination img {
+        width: 100%;
+        transition: 0.3s ease-in-out;
+        
+      }
+      .destination img:hover{
+        transform:scale(1.02);
+    }
+    .destination h3{
+          font-size:22px;
+          color : #0077b6;
+          margin : 0;
+      }
+      .destination span{
+          font-weight:600;
+          color: #5c5b5b;
+          position :relative ;
+          top : -5px;
+      }
+      .destination p{
+        height:50px;
+        font-weight: 600;
+      }
+      .destination .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .destination .info .services {
+          display: flex;
+          gap: 0.3rem;
+        }
+        .destination .info .services img {
+            border-radius: 1rem;
+            background-color: #48cae4d1;
+            width: 2rem;
+            /* padding: 1rem; */
+            padding: 0.3rem 0.4rem;
+          }
+          .destination  .distance {
+        display: flex;
+        justify-content: space-between;
+      }
+      .destination  .distance  span{
+            font-weight:600;
+            color : black;
+            position :relative ;
+            top : 0px;
+        }
