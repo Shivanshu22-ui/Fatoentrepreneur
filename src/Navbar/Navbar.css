@@ -18,11 +18,27 @@
     font-weight: 600;
     list-style: none;
 }
+.navBar .navItems ul li::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    border-radius: 6px;
+    left: 50%;
+    position: relative;
+    background: #5959595d;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.navBar .navItems ul li:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
 .navBar  li a{
     text-decoration: none;
     color: #0077b6;
     font-weight: 600;
-
 }
 .navBar button{
     padding: 0.5rem 1rem;

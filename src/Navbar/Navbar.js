@@ -12,7 +12,7 @@ function Navbar() {
             <img className="logo p-3 mt-2" src={logo} alt="" />
             <h6 className="logo-text pt-4">Layover City</h6>
           </div>
-          <div className="col-7 pt-2">
+          <div className="navItems col-7 pt-2">
             <ul className="d-flex flex-wrap justify-content-center align-items-center">
               <li className="m-2 p-2">
                 <Link to="/"> Home</Link>
