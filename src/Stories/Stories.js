@@ -7,7 +7,7 @@ import Header from './Header/Header';
 
 function Stories() {
   return (
-    <div>
+    <div className='container-fluid'>
       <Header/>
 
       <div className="d-flex">

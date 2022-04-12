@@ -1,15 +1,19 @@
 .post {
-    width: 385px;
+    width: 40%;
+    padding: 10px;
     margin: 0px 25px 40px 25px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border: #99999954 solid 2px;
+    border-radius: 2px;
   }
   
   .postImg {
-    width: 385px;
+    width: 90%;
     height: 280px;
     object-fit: cover;
-    border-radius: 7px;
+    border-radius: 2px;
   }
   
   .postInfo {
@@ -18,27 +22,29 @@
     align-items: center;
   }
   
-  .postCat {
-    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  .postCat .link{
     font-weight: 400;
     font-size: 11px;
-    color: #be9656;
+    color: #be9656 !important;
     line-height: 19px;
     margin-top: 15px;
     margin-right: 10px;
     cursor: pointer;
   }
   
-  .postTitle {
-    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  .postTitle .link{
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 600;
     margin-top: 15px;
+    color:  #474545;
     cursor: pointer;
+  }
+
+  .chgedcolor{
+    color: #1b86be;
   }
   
   .postDate {
-    font-family: "Lora", serif;
     font-style: italic;
     font-size: 13px;
     font-weight: 400;
@@ -47,7 +53,6 @@
   }
   
   .postDesc {
-    font-family: "Varela Round", Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
