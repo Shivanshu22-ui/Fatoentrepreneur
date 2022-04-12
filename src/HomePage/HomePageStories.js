@@ -1,5 +1,5 @@
 import React from "react";
-import "./Stories.css";
+import "./HomePageStories.css";
 import { Link } from "react-router-dom";
 function Stories() {
   // listing vars here so they're in the global scope

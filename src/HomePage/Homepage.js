@@ -2,7 +2,7 @@ import React from 'react'
 import Services from './Services';
 import PopularCity from './PopularCity'
 import Footer from '../Footer/Footer';
-import Stories from './Stories';
+import Stories from './HomePageStories';
 import "./HomePage.css"
 import bgimage from "./hero.png"
 
