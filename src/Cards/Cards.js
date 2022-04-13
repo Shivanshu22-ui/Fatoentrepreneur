@@ -38,13 +38,15 @@ const PlacesCards = (props) => {
       <div className="placeCardsDetails">
         <h3>Delhi</h3>
         <div className="placeInfo d-flex align-items-center justify-content-start">
-          <p>placeCardsDetails</p>
+          <p>Restaurants</p>
+          <div className="placesStarRating mx-2">
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
-          <span className="placeCardRating" >4</span>
+          </div>
+          <span className="placeCardRating mx-2 mt-1" >  4 <span className="numberOfReview mx-2">(1927 Reviews)</span> </span>
         </div>
       </div>
     </div>
