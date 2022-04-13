@@ -46,7 +46,7 @@ const PlacesCards = (props) => {
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           </div>
-          <span className="placeCardRating mx-2 mt-1" >  4 <span className="numberOfReview mx-2">(1927 Reviews)</span> </span>
+          <span className="placeCardRating mx-2 mt-1" >   <span className="numberOfReview mx-2">(1927 Reviews)</span> </span>
         </div>
       </div>
     </div>

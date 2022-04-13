@@ -93,7 +93,9 @@
   margin: 0 2px;
   font-weight: 900;
 }
-
+.placeCardsDetails .placeInfo .placesStarRating{
+  width: 90px;
+}
 .placeCardsDetails .placeInfo .placeCardRating{
   font-size: 13px;
 }
