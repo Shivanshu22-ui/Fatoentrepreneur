@@ -27,26 +27,32 @@ const PopularCityCards = (destination) => {
 };
 
 const PlacesCards = (props) => {
+  const list = []
+  for (let index = 0; index < props.stars; index++) {
+    list.push(<span className="fa fa-star checked"></span>)
+  };
+  console.log(list);
   return (
     <div className="placesCard">
       <div className="imgDetails">
         <img
-          src="https://layover.city/wp-content/uploads/2019/11/Flor-London-2019-1-540x480.jpg"
+          src={props.image}
           alt=""
         />
       </div>
       <div className="placeCardsDetails">
-        <h3>Delhi</h3>
+        <h3>{props.name}</h3>
         <div className="placeInfo d-flex align-items-center justify-content-start">
-          <p>Restaurants</p>
+          <p>{props.type}</p>
           <div className="placesStarRating mx-2">
+            {/* {{list}} */}
+          {/* <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
-          <span className="fa fa-star checked"></span>
-          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span> */}
           </div>
-          <span className="placeCardRating mx-2 mt-1" >   <span className="numberOfReview mx-2">(1927 Reviews)</span> </span>
+          <span className="placeCardRating mx-2 mt-1" >   <span className="numberOfReview mx-2">({props.reviews} Reviews)</span> </span>
         </div>
       </div>
     </div>

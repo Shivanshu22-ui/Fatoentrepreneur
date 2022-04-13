@@ -59,7 +59,7 @@ function Places() {
     <div className="places">
       <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
         {placesData.map((places, index) => {
-          return <PlacesCards name = {places.name}  />;
+          return <PlacesCards name = {places.name} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} />;
         })}
       </div>
 
