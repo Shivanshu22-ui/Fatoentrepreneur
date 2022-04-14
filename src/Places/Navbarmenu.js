@@ -32,17 +32,25 @@ const Navbarmenu = () => {
     boxClassSubMenu.push("");
   }
 
+// const menuItems=[
+//     {
+//         prize:[
+//             "Free", 
+//             low="$",
+//             medium="$",
+//             high="$"
+//         ],
+//         city:[],
+//         categories:[],
+//         placeType:[],
+//         amenities:[]
+//     }
+// ]
+
   return (
     <header className="header__middle">
       <div className="container">
         <div className="row">
-          {/* Add Logo  */}
-          <div className="header__middle__logo">
-            <NavLink exact activeClassName="is-active" to="/">
-              {/* <img src={logo} alt="logo" />  */}
-            </NavLink>
-          </div>
-
           <div className="header__middle__menus">
             <nav className="main-nav ">
               {/* Responsive Menu Button */}
@@ -71,35 +79,60 @@ const Navbarmenu = () => {
               )}
 
               <ul className={boxClass.join(" ")}>
-                <li className="menu-item">
-                  <NavLink
-                    exact
-                    activeClassName="is-active"
-                    onClick={toggleClass}
-                    to={`#`}
-                  >
-                    {" "}
-                    Home{" "}
-                  </NavLink>
-                </li>
-                <li className="menu-item ">
-                  <NavLink
-                    onClick={toggleClass}
-                    activeClassName="is-active"
-                    to={`#`}
-                  >
-                    {" "}
-                    About{" "}
-                  </NavLink>{" "}
+                <li
+                  onClick={toggleSubmenu}
+                  className="menu-item sub__menus__arrows"
+                >
+                    
+                  {" "}
+                  <Link to="#">{" "}
+                    Shop 
+                    <FiChevronDown />{" "}
+                  </Link>
+                  <ul className={boxClassSubMenu.join(" ")}>
+                    <li>
+                      {" "}
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Online Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                    <li>
+                      {" "}
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Online Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                    <li>
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Offline Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                  </ul>
+                  
                 </li>
                 <li
                   onClick={toggleSubmenu}
                   className="menu-item sub__menus__arrows"
                 >
                   {" "}
-                  <Link to="#">
-                    {" "}
-                    Shop <FiChevronDown />{" "}
+                  <Link to="#">{" "}
+                    Shop 
+                    <FiChevronDown />{" "}
                   </Link>
                   <ul className={boxClassSubMenu.join(" ")}>
                     <li>
@@ -125,15 +158,104 @@ const Navbarmenu = () => {
                     </li>
                   </ul>
                 </li>
-                <li className="menu-item ">
-                  <NavLink
-                    onClick={toggleClass}
-                    activeClassName="is-active"
-                    to={`#`}
-                  >
-                    {" "}
-                    Contact{" "}
-                  </NavLink>{" "}
+                <li
+                  onClick={toggleSubmenu}
+                  className="menu-item sub__menus__arrows"
+                >
+                  {" "}
+                  <Link to="#">{" "}
+                    Shop 
+                    <FiChevronDown />{" "}
+                  </Link>
+                  <ul className={boxClassSubMenu.join(" ")}>
+                    <li>
+                      {" "}
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Online Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                    <li>
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Offline Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  onClick={toggleSubmenu}
+                  className="menu-item sub__menus__arrows"
+                >
+                  {" "}
+                  <Link to="#">{" "}
+                    Shop 
+                    <FiChevronDown />{" "}
+                  </Link>
+                  <ul className={boxClassSubMenu.join(" ")}>
+                    <li>
+                      {" "}
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Online Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                    <li>
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Offline Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  onClick={toggleSubmenu}
+                  className="menu-item sub__menus__arrows"
+                >
+                  {" "}
+                  <Link to="#">{" "}
+                    Shop 
+                    <FiChevronDown />{" "}
+                  </Link>
+                  <ul className={boxClassSubMenu.join(" ")}>
+                    <li>
+                      {" "}
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Online Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                    <li>
+                      <NavLink
+                        onClick={toggleClass}
+                        activeClassName="is-active"
+                        to={`#`}
+                      >
+                        {" "}
+                        Offline Shop{" "}
+                      </NavLink>{" "}
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </nav>

@@ -66,13 +66,14 @@ function Places() {
     <div className="places">
        <DropDownNav />
       <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
+        <hr />
         {placesData.map((places, index) => {
           return <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/>;
         })}
       </div>
 
-     
-      <PlacesInfo/>
+{/*      
+      <PlacesInfo/> */}
       <Footer />
     </div>
   );
