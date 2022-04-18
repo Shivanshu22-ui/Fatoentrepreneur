@@ -1,3 +1,10 @@
+*{
+  box-sizing: border-box !important;
+}
+body{
+  box-sizing: border-box !important;
+}
+
 .App {
   text-align: center;
   overflow-x: hidden !important;

@@ -133,3 +133,11 @@
 .placeCardsDetails .placeInfo .placeCardRating .numberOfReview{
   font-weight: 400;
 }
+
+/* Clients Cards */
+
+.clientCards{
+  height: 100px;
+  width: 70px;
+  background-color: #0077b6;
+}

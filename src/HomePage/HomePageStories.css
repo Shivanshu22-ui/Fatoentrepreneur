@@ -2,11 +2,8 @@
 ** Layout, Text & Colors 
 */
 .stories{
-  height: 170vh;
-  width: 100vw;
-  overflow-x: hidden !important;
-  margin: 0;
-  padding: 0;
+  height: min-content;
+  width: auto;
 }
 
 p {
@@ -97,6 +94,8 @@ p {
   width: 100%;
   z-index: 110;
   position: absolute;
+  top : 80px;
+  left:0;
   opacity: 0;
   pointer-events: none;
 }

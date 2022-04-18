@@ -8,7 +8,7 @@ import bgimage from "./hero.png"
 
 function Homepage() {
   return (
-    <div className='container-fluid overflow-x-hidden'>
+    <div className='container-fluid p-0 overflow-x-hidden'>
       <div className="home px-5  ">
       <div className="herobgImage  d-flex align-items-center justify-content-center ">
         <img src={bgimage} alt="" />

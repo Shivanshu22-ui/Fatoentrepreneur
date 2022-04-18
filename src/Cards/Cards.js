@@ -62,5 +62,14 @@ const PlacesCards = (props) => {
   );
 };
 
+const ClientCards=()=>{
+  return(
+    <div className="clientCards">
+      
+    </div>
+  )
+}
+
+
 // export default Cards;
-export { PopularCityCards, PlacesCards };
+export { PopularCityCards, PlacesCards , ClientCards};

@@ -220,7 +220,7 @@ function Stories() {
   return (
     <div className="stories">
       <h1 className="text-center pb-5 mb-2">FLIGHT CREW STORIES</h1>
-      <div className="container-fluid  d-flex justify-content-center">
+      <div className="container-fluid p-0 d-flex justify-content-center">
         <div className="card-column column-0">
           <div className="card card-color-0">
             <div className="border"></div>
