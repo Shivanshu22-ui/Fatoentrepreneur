@@ -137,7 +137,8 @@
 /* Clients Cards */
 
 .clientCards{
-  height: 100px;
-  width: 70px;
+  height: 40vh;
+  width: 90%;
   background-color: #0077b6;
+  /* margin: 10px; */
 }
