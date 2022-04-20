@@ -65,6 +65,17 @@ const PlacesCards = (props) => {
 const ClientCards=()=>{
   return(
     <div className="clientCards">
+      <div className="clientImg">
+        <img src="https://media.istockphoto.com/photos/portrait-of-men-looking-at-camera-picture-id1181083533?k=20&m=1181083533&s=612x612&w=0&h=JRcWzFmJhmnTPkT0MU1gGGcax-_p4eT0M_eRXWRqxgU=" alt="" />
+      </div>
+      <div className="clientContent text-center">
+        <div className="clientName p-2">
+          <h3>Shivanshu Singh</h3>
+        </div>
+        <div className="clientReview">
+           <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus quia ducimus in placeat non ratione aspernatur ex molestiae optio vel.</p>
+        </div>
+      </div>
       
     </div>
   )

@@ -137,8 +137,20 @@
 /* Clients Cards */
 
 .clientCards{
-  height: 40vh;
-  width: 90%;
-  background-color: #0077b6;
-  /* margin: 10px; */
+  height: 45vh;
+  width: 85%;
+  background-color: #d6d8d94f;
+  margin: 10px;
+  padding: 5px;
+}
+.clientCards .clientImg{
+  /* height: 500px; */
+}
+.clientCards .clientContent .clientName h3{
+  font-size: 1.2rem;
+  color: #dc3545;
+}
+
+.clientCards .clientContent .clientReview{
+  font-size: .7rem;
 }
