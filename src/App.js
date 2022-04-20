@@ -4,6 +4,7 @@ import Places from './Places/Places';
 import Contact from './Contact/Contact';
 import Stories from './Stories/Stories';
 import About from './About/About';
+import PlacesInfo from './Places/PlacesInfo/PlacesInfo';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,7 +19,8 @@ function App() {
         <Switch>
           <Route path='/Places'>
             <Navbar/>
-            <Places/>
+            {/* <Places/> */}
+            <PlacesInfo/>
           </Route>
           <Route path='/Stories'>
             <Navbar/>
