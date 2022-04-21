@@ -19,7 +19,10 @@ function App() {
         <Switch>
           <Route path='/Places'>
             <Navbar/>
-            {/* <Places/> */}
+            <Places/>
+          </Route>
+          <Route path='/placesInfo'>
+            <Navbar/>
             <PlacesInfo/>
           </Route>
           <Route path='/Stories'>

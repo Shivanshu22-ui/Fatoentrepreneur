@@ -31,21 +31,21 @@ function Footer() {
                         <div className="footer-widget-heading">
                             <h3>Useful Links</h3>
                         </div>
-                        <ul className='d-flex' >
-                            <div>
+                        <ul className='' >
+                            {/* <div> */}
                             <li><a href="#">Amsterdam</a></li>
                             <li><a href="#">Bangkok</a></li>
                             <li><a href="#">Barcelona</a></li>
                             <li><a href="#">London</a></li>
                             <li><a href="#">Stories</a></li>
-                            </div>
-                            <div>
+                            {/* </div> */}
+                            {/* <div> */}
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Terms of use</a></li>
                             <li><a href="#">Cookie Policy</a></li>
                             <li><a href="#">Privicy Policy</a></li>
-                            </div>
+                            {/* </div> */}
                         </ul>
                     </div>
                 </div>

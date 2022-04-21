@@ -4,6 +4,7 @@ import DropDownNav from "./Navbarmenu";
 import "./Places.css";
 import { PlacesCards } from "../Cards/Cards";
 import PlacesInfo from "./PlacesInfo/PlacesInfo";
+import { NavLink, Link } from "react-router-dom";
 
 function Places() {
   const placesData = [
@@ -14,7 +15,8 @@ function Places() {
       type: "Resturant",
       stars: 4,
       reviews: 19277,
-      name:"Flor"
+      name:"Flor",
+      linkto :"/placesInfo"
     },
     {
       place: "Delhi",
@@ -23,7 +25,8 @@ function Places() {
       type: "Sight",
       stars: 3,
       reviews: 1758,
-      name:"The 9 Streets"
+      name:"The 9 Streets",
+      linkto :"/placesInfo"
     },
     {
       place: "London",
@@ -32,7 +35,8 @@ function Places() {
       type: "Sight",
       stars: 5,
       reviews: 2064,
-      name:"Bar Fisk"
+      name:"Bar Fisk",
+      linkto :"/placesInfo"
     },
     {
       place: "London",
@@ -41,7 +45,8 @@ function Places() {
       type: "Hotel",
       stars: 4,
       reviews: 1879,
-      name:"The Dylan"
+      name:"The Dylan",
+      linkto :"/placesInfo"
     },
     {
       place: "Jaipur",
@@ -50,7 +55,8 @@ function Places() {
       type: "Museum",
       stars: 4,
       reviews: 879,
-      name:"Van Gogh Museum"
+      name:"Van Gogh Museum",
+      linkto :"/placesInfo"
     },
     {
       place: "Amsterdam",
@@ -59,7 +65,8 @@ function Places() {
       type: "Activity",
       stars: 3,
       reviews: 19277,
-      name:"Tolhuistuin"
+      name:"Tolhuistuin",
+      linkto :"/placesInfo"
     },
   ];
   return (
@@ -68,7 +75,7 @@ function Places() {
       <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
         <hr />
         {placesData.map((places, index) => {
-          return <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/>;
+          return <Link to={places.linkto}> <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/></Link>;
         })}
       </div>
 

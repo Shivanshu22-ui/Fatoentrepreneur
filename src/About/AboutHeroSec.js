@@ -8,7 +8,7 @@ function AboutHeroSec() {
         <div className="container-fluid ">
             <div className="row d-flex flex-wrap ">
                 <div className="col-4">
-                    <img src={aboutusImg} alt="" />
+                    <img src={aboutusImg} alt="" style={{height:"450px"}}/>
                 </div>
                 <div className="col-8 d-flex flex-wrap p-4 justify-content-center align-items-center">
                     <div className="herosecContent text-center p-4 m-4">

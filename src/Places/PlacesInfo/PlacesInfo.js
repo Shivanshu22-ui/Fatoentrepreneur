@@ -1,89 +1,21 @@
 import React from 'react'
 import "./PLacesInfo.css"
-import { Carousel } from 'react-carousel-minimal';
+import PlacesInfoHero from './PlacesInfoHero'
+import PlaceContentMain from './PlaceContentMain'
+import Footer from '../../Footer/Footer'
 
 function PlacesInfo() {
-    const data = [
-        {
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
-          caption: "San Francisco"
-        },
-        {
-          image: "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
-          caption: "Scotland"
-        },
-        {
-          image: "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
-          caption: "Darjeeling"
-        },
-        {
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
-          caption: "San Francisco"
-        },
-        {
-          image: "https://i.natgeofe.com/n/f7732389-a045-402c-bf39-cb4eda39e786/scotland_travel_4x3.jpg",
-          caption: "Scotland"
-        },
-        {
-          image: "https://www.tusktravel.com/blog/wp-content/uploads/2020/07/Best-Time-to-Visit-Darjeeling-for-Honeymoon.jpg",
-          caption: "Darjeeling"
-        },
-        {
-          image: "https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx",
-          caption: "San Francisco"
-        },
-        {
-          image: "https://images.ctfassets.net/bth3mlrehms2/6Ypj2Qd3m3jQk6ygmpsNAM/61d2f8cb9f939beed918971b9bc59bcd/Scotland.jpg?w=750&h=422&fl=progressive&q=50&fm=jpg",
-          caption: "Scotland"
-        },
-        {
-          image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
-          caption: "Darjeeling"
-        }
-      ];
+    
 
-
-      const captionStyle = {
-        fontSize: '2em',
-        fontWeight: 'bold',
-      }
-      const slideNumberStyle = {
-        fontSize: '20px',
-        fontWeight: 'bold',
-      }
   return (
-    <div>
-      <div style={{ textAlign: "center" }}>
-        <div style={{
-          padding: "0 20px"
-        }}>
-          <Carousel
-            data={data}
-            width="850px"
-            height="500px"
-            time={2000}
-            captionStyle={captionStyle}
-            radius="10px"
-            // slideNumber={true}
-            slideNumberStyle={slideNumberStyle}
-            captionPosition="top"
-            automatic={true}
-            dots={true}
-            pauseIconColor="white"
-            pauseIconSize="40px"
-            slideBackgroundColor="darkgrey"
-            slideImageFit="cover"
-            thumbnails={true}
-            thumbnailWidth="100px"
-            style={{
-              textAlign: "center",
-              maxWidth: "850px",
-              maxHeight: "500px",
-              margin: "40px auto",
-            }}
-          />
-        </div>
+    <div className='container-fluid p-0'>
+      <div className="placesInfo">
+
+     <PlacesInfoHero/>
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,64L40,96C80,128,160,192,240,192C320,192,400,128,480,122.7C560,117,640,171,720,165.3C800,160,880,96,960,69.3C1040,43,1120,53,1200,80C1280,107,1360,149,1400,170.7L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
       </div>
+      <PlaceContentMain/>
+      <Footer/>
     </div>
   )
 }
