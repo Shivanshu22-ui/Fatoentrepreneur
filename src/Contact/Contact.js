@@ -9,14 +9,17 @@ function Contact() {
     {
       title: "Phone number",
       content: "000-0000-000",
+      icon:"fa-solid fa-phone"
     },
     {
       title: "Email",
       content: "support@gmail.com",
+      icon:"fa-solid fa-envelope"
     },
     {
       title: "Location",
       content: "Pune maharastra 410115, India",
+      icon:"fa-solid fa-location-dot"
     },
   ];
   return (
@@ -51,10 +54,10 @@ function Contact() {
               {contactInfo.map((contact, index) => {
                 return (
                   <div className="details row mt-4">
-                    <div className="icon col-4 m-2">
-                      <FontAwesomeIcon icon="fa-solid fa-phone" />
+                    <div className="icon col-4 m-2  align-items-center d-flex  flex-wrap justify-content-center">
+                    <i class={contact.icon}></i>
                     </div>
-                    <div className="content col align-items-start d-flex flex-column flex-wrap justify-centent-center flex-column pt-2">
+                    <div className="content col align-items-start d-flex flex-column flex-wrap justify-content-center flex-column pt-2">
                       <h1 className="content-title ">{contact.title}</h1>
                       <p className="content-content">{contact.content}</p>
                     </div>

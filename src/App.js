@@ -5,12 +5,14 @@ import Contact from './Contact/Contact';
 import Stories from './Stories/Stories';
 import About from './About/About';
 import PlacesInfo from './Places/PlacesInfo/PlacesInfo';
+import LoginPage from './LoginSignup/LoginPage';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
 } from "react-router-dom";
+import Login from './LoginSignup/LoginPage';
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
           </Route>
           <Route path='/Login'>
             <Navbar/>
+            <LoginPage/>
           </Route>
           <Route path='/'>
             <Navbar/>
