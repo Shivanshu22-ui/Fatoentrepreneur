@@ -15,19 +15,39 @@ function PlacesInfoHero() {
   return (
     <div className="container">
       <div className="row placesInfoHero d-flex align-items-center justify-content-center flex-wrap">
-        <div className="col-4  ">
+        <div className="col-5  ">
           <div className="placeTitle">
-            <h3>Welcome to </h3>
-            <p>Flor</p>
+            <h3>Paris </h3>
+            <p>The city of love</p>
           </div>
           <div className="placeSubtitle">
-            <p> <span><i class="fa-solid fa-location-dot  px-2 "></i></span> Resturant</p>
+            {/* <p> <span><i class="fa-solid fa-location-dot  px-2 "></i></span> Resturant</p> */}
           </div>
-          <div className="placeContent">
-              
+          <div className="placeContent ">
+              <ul className="d-flex justify-content-between p-3 my-2">
+                <li className="mx-2">
+                  <div>
+                    <p className="text-center"><span className="px-2"><i class="fa-solid fa-sack-dollar"></i></span> <i>Dollar</i> </p>
+                    <h3 className="chgedcolor mt-2"> CURRENCY</h3>
+                  </div>
+                </li>
+                <li className="mx-2">
+                  <div>
+                    <p className="text-center"><span className="px-2"><i class="fa-solid fa-language"></i></span> <i>English</i> </p>
+                    <h3 className="chgedcolor mt-2"> LANGUAGE</h3>
+                  </div>
+                </li>
+                <li className="mx-2 bline">
+                  <div>
+                    <p className="text-center"> <span className="px-2"><i class="fa-solid fa-calendar-days"></i></span><i>Anytime</i> </p>
+                    <h3 className="chgedcolor mt-2"> BEST TIME TO VISIT
+</h3>
+                  </div>
+                </li>
+              </ul>
           </div>
         </div>
-        <div className="col-8 ">
+        <div className="col-7 ">
           <Carousel
           className="carousel"
             slides={data}

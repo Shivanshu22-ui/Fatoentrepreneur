@@ -1,0 +1,8 @@
+.placeinfonav ul li{
+    font-weight: 600;
+}
+.placeinfonav ul .active{
+    color: #23d3d3;
+    border-bottom: 2px solid #23d3d3;
+    padding-top: 5px;
+}

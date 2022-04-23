@@ -3,10 +3,17 @@ import "./Login.css"
 
 
 function LoginPage() {
-//     const signUpButton = document.getElementById('signUp');
-// const signInButton = document.getElementById('signIn');
-// const container1 = document.getElementById('container1');
+    const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container1 = document.getElementById('container1');
+function signUpBtn(){
+	console.log(container1);
+	container1.classList.add("right-panel-active");
+}
 
+function signInBtn(){
+	container1.classList.remove("right-panel-active");
+}
 // signUpButton.addEventListener('click', () => {
 // 	container1.classList.add("right-panel-active");
 // });
@@ -54,12 +61,12 @@ function LoginPage() {
 			<div className="overlay-panel overlay-left">
 				<h1>Welcome Back!</h1>
 				<p>To keep connected with us please login with your personal info</p>
-				<button className="ghost" id="signIn">Sign In</button>
+				<button className="ghost" id="signIn"  onClick={signInBtn}>Sign In</button>
 			</div>
 			<div className="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
-				<button className="ghost button" id="signUp">Sign Up</button>
+				<button className="ghost button" id="signUp"  onClick={signUpBtn}>Sign Up</button>
 			</div>
 		</div>
 	</div>

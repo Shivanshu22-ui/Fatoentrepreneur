@@ -105,6 +105,7 @@ function Stories() {
 //     // the original card may be in a different position, because of scrolling, so the cover position needs to be reset before scaling back down
 //     setCoverPosition(cardPosition);
 //     scaleCoverToFillWindow(cardPosition);
+//     console.log(cardPosition+" This is card position")
 //     // animate scale back to the card size and position
 //     cover.style.transform =
 //       "scaleX(" +
@@ -134,7 +135,7 @@ function Stories() {
 //     cover.style.left = cardPosition.left + "px";
 //     cover.style.top = cardPosition.top + "px";
 //     cover.style.width = cardPosition.width + "px";
-//     cover.style.height = cardPosition.height + "px";
+//     cover.style.height = cardPosition.height - "900 px";
 //   }
 
 //   function setCoverColor(cardStyle) {

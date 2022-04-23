@@ -70,9 +70,19 @@ function Places() {
     },
   ];
   return (
-    <div className="places">
+    <div className="places ">
        <DropDownNav />
+       <h3 className=" mt-4 mx-5 px-5 container-fluid chgedcolor" >Recommended For You</h3>
       <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
+        
+        <hr />
+        {placesData.map((places, index) => {
+          return <Link to={places.linkto}> <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/></Link>;
+        })}
+      </div>
+       <h3 className=" my-4 mx-5 px-5 container-fluid chgedcolor" >Nearest To You</h3>
+      <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
+        
         <hr />
         {placesData.map((places, index) => {
           return <Link to={places.linkto}> <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/></Link>;

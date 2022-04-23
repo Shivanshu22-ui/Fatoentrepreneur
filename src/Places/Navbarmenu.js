@@ -86,7 +86,7 @@ const Navbarmenu = () => {
                     
                   {" "}
                   <Link to="#">{" "}
-                    Shop 
+                    Price 
                     <FiChevronDown />{" "}
                   </Link>
                   <ul className={boxClassSubMenu.join(" ")}>
@@ -98,7 +98,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Online Shop{" "}
+                        Low{" "}
                       </NavLink>{" "}
                     </li>
                     <li>
@@ -109,7 +109,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Online Shop{" "}
+                       High{" "}
                       </NavLink>{" "}
                     </li>
                     <li>
@@ -119,7 +119,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Offline Shop{" "}
+                       Average{" "}
                       </NavLink>{" "}
                     </li>
                   </ul>
@@ -131,7 +131,7 @@ const Navbarmenu = () => {
                 >
                   {" "}
                   <Link to="#">{" "}
-                    Shop 
+                   Price
                     <FiChevronDown />{" "}
                   </Link>
                   <ul className={boxClassSubMenu.join(" ")}>
@@ -143,7 +143,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Online Shop{" "}
+                        Low{" "}
                       </NavLink>{" "}
                     </li>
                     <li>
@@ -153,7 +153,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Offline Shop{" "}
+                        High{" "}
                       </NavLink>{" "}
                     </li>
                   </ul>
@@ -164,7 +164,7 @@ const Navbarmenu = () => {
                 >
                   {" "}
                   <Link to="#">{" "}
-                    Shop 
+                    Price 
                     <FiChevronDown />{" "}
                   </Link>
                   <ul className={boxClassSubMenu.join(" ")}>
@@ -176,7 +176,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Online Shop{" "}
+                        Low{" "}
                       </NavLink>{" "}
                     </li>
                     <li>
@@ -186,7 +186,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Offline Shop{" "}
+                        High{" "}
                       </NavLink>{" "}
                     </li>
                   </ul>
@@ -197,7 +197,7 @@ const Navbarmenu = () => {
                 >
                   {" "}
                   <Link to="#">{" "}
-                    Shop 
+                    Price 
                     <FiChevronDown />{" "}
                   </Link>
                   <ul className={boxClassSubMenu.join(" ")}>
@@ -209,7 +209,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Online Shop{" "}
+                       High{" "}
                       </NavLink>{" "}
                     </li>
                     <li>
@@ -219,7 +219,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Offline Shop{" "}
+                        Low{" "}
                       </NavLink>{" "}
                     </li>
                   </ul>
@@ -230,7 +230,7 @@ const Navbarmenu = () => {
                 >
                   {" "}
                   <Link to="#">{" "}
-                    Shop 
+                   Price
                     <FiChevronDown />{" "}
                   </Link>
                   <ul className={boxClassSubMenu.join(" ")}>
@@ -242,7 +242,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Online Shop{" "}
+                       High{" "}
                       </NavLink>{" "}
                     </li>
                     <li>
@@ -252,7 +252,7 @@ const Navbarmenu = () => {
                         to={`#`}
                       >
                         {" "}
-                        Offline Shop{" "}
+                       Low{" "}
                       </NavLink>{" "}
                     </li>
                   </ul>
