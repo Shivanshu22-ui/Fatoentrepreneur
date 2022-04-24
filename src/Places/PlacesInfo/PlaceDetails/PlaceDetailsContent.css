@@ -16,6 +16,15 @@
     font-weight: 600;
     color: #5d5d5d;
 }
-.placeDetailsContent .place-info-details .star-review{
+.star-review{
     color: #23d3d3;
+}
+.placeDetailsContent .placeServices li{
+    /* font-weight: 600; */
+    color: #5d5d5d;
+    font-size: 1.5rem;
+}
+.placeDetailsContent .placeServices li p{
+    font-size: 1rem;
+
 }
