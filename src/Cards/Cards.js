@@ -4,6 +4,7 @@ import "./Cards.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import info1 from "./info1.png";
 import info2 from "./info2.png";
+import img1 from "./o.jpg";
 
 const PopularCityCards = (destination) => {
   return (
@@ -81,6 +82,52 @@ const ClientCards=()=>{
   )
 }
 
+const NearbyCard = (props) => {
+  const list = [];
+  for (let index = 0; index < props.stars; index++) {
+    list.push(<span className="fa fa-star checked "></span>);
+  }
+  return (
+    <div className="nearbyCard">
+      {/* <hr /> */}
+      <div className="col-10 d-flex flex-row">
+        <div classname='col-3 p-2 d-flex flex-column justify-content-center'>
+          <img className="nearImg" src={props.img}/>
+        </div>
+        <div className="col-9 px-3 py-1  d-flex flex-column justify-content-around">
+          <p className="nearPara1 p-0 m-0">{props.title}</p>
+          <p className="nearPara2 p-0 m-0">{props.subTitle}</p>
+        </div>
+      </div>
+      <div className="col-2 nearCardsReviews">
+        <p className="m-0">{props.reviews} Reviews</p>
+        {list}
+      </div>
+    </div>
+  )
+}
+
+const ReviewCards=(props)=>{
+  const list = [];
+  for (let index = 0; index < props.stars; index++) {
+    list.push(<span className="fa fa-star star-review mx-1 "></span>);
+  }
+  return(
+    <div className="reviewCards my-4" >
+      <div className="reviewPersonDetails d-flex">
+        <img className="reviewPersonImage" src="https://images.pexels.com/photos/445109/pexels-photo-445109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+        <div className="reviewPersonName mx-3">
+          <h2 className="m">Kevin  {list}</h2>
+          <p className="m-0"><i> 2 years ago</i></p>
+        </div>
+      </div>
+      <div className="comments mt-4">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe unde sapiente quae obcaecati architecto, blanditiis commodi consectetur est, distinctio deleniti laborum quaerat ducimus tempora vel.
+      </div>
+    </div>
+  )
+}
+
 
 // export default Cards;
-export { PopularCityCards, PlacesCards , ClientCards};
+export { PopularCityCards, PlacesCards , ClientCards, NearbyCard ,ReviewCards};

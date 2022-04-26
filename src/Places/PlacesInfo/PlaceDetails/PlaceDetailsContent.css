@@ -17,7 +17,7 @@
     color: #5d5d5d;
 }
 .star-review{
-    color: #23d3d3;
+    color: #23d3d3 !important;
 }
 .placeDetailsContent .placeServices li{
     /* font-weight: 600; */

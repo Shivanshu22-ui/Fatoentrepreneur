@@ -1,18 +1,23 @@
-import React from 'react'
+import React , {useRef} from 'react'
 import "./Login.css"
 
 
 function LoginPage() {
-    const signUpButton = document.getElementById('signUp');
+const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container1 = document.getElementById('container1');
+
+const ref =useRef(null);
 function signUpBtn(){
-	console.log(container1);
-	container1.classList.add("right-panel-active");
+	// console.log(container1)
+	const container2 = ref.current; 
+	container2.classList.add("right-panel-active");
+	// container1.classList.add("right-panel-active");
 }
 
 function signInBtn(){
-	container1.classList.remove("right-panel-active");
+	const container2 = ref.current; 
+	container2.classList.remove("right-panel-active");
 }
 // signUpButton.addEventListener('click', () => {
 // 	container1.classList.add("right-panel-active");
@@ -25,7 +30,7 @@ function signInBtn(){
     return (
   <div className='body'>
       
-<div className="container1" id="container1">
+<div className="container1" id="container1" ref={ref}>
 	<div className="form-container1 sign-up-container1">
 		<form action="#">
 			<h1 className='loginheading'>Create Account</h1>
