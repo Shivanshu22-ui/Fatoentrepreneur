@@ -7,6 +7,8 @@ import About from "./About/About";
 import PlacesInfo from "./Places/PlacesInfo/PlacesInfo";
 import LoginPage from "./LoginSignup/LoginPage";
 import PlaceDetails from "./Places/PlacesInfo/PlaceDetails/PlaceDetails";
+import SingleStory from "./Stories/SingleStory/SingleStory";
+
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./LoginSignup/LoginPage";
@@ -34,7 +36,8 @@ function App() {
           </Route>
           <Route path="/ContactUs">
             <Navbar />
-            <Contact />
+            <SingleStory/>
+            {/* <Contact /> */}
           </Route>
           <Route path="/Login">
             <Navbar />
