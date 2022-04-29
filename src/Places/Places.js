@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ Component } from "react";
 import Footer from "../Footer/Footer";
 import DropDownNav from "./Navbarmenu";
 import "./Places.css";
@@ -6,7 +6,7 @@ import { PlacesCards } from "../Cards/Cards";
 import PlacesInfo from "./PlacesInfo/PlacesInfo";
 import { NavLink, Link } from "react-router-dom";
 
-function Places() {
+function Places () {
   const placesData = [
     {
       place: "London",
@@ -69,10 +69,22 @@ function Places() {
       linkto :"/placesInfo"
     },
   ];
+
+// const getData = () => {
+//     fetch(
+// "https://fatoentrepreneur.herokuapp.com/places")
+//         .then((res) => res.json())
+//         .then((json) => {
+//             this.setState({
+//                 items: json,
+//                 DataisLoaded: true
+//             });
+//         })
+// }
   return (
     <div className="places ">
        <DropDownNav />
-       <h3 className=" mt-4 mx-5 px-5 container-fluid chgedcolor" >Recommended For You</h3>
+       <h3 className=" mt-4 mx px-5 container-fluid chgedcolor" >Recommended For You</h3>
       <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
         
         <hr />
@@ -80,7 +92,7 @@ function Places() {
           return <Link to={places.linkto}> <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/></Link>;
         })}
       </div>
-       <h3 className=" my-4 mx-5 px-5 container-fluid chgedcolor" >Nearest To You</h3>
+       <h3 className=" my-4 mx px-5 container-fluid chgedcolor" >Nearest To You</h3>
       <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
         
         <hr />

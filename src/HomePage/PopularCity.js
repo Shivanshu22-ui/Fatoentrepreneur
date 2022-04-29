@@ -7,8 +7,10 @@ import Destination4 from "./Destination4.png";
 import Destination5 from "./Destination5.png";
 import Destination6 from "./Destination6.png";
 import { PopularCityCards } from "../Cards/Cards";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Recommend() {
+  const location = useHistory()
   const data = [
     {
       image: Destination1,
@@ -67,6 +69,11 @@ export default function Recommend() {
     "Long Term Travel",
   ];
 
+  const cityClickHandler = (e) => {
+    console.log("clicked",e)
+    location.push(`city/${e}`)
+  }
+
   const [active, setActive] = useState(1);
   return (
     <Section id="recommend">
@@ -97,6 +104,7 @@ export default function Recommend() {
               subTitle = {destination.subTitle}
               cost = {destination.cost}
               duration = {destination.duration}
+              click={() => cityClickHandler(destination.city)}
             />
           );
         })}

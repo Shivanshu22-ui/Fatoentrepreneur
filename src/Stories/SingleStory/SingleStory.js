@@ -5,8 +5,14 @@ import "./SingleStory.css";
 // import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import Sidebar from "../sidebar/Sidebar";
 import Footer from "../../Footer/Footer";
+import Posts from "../posts/Posts";
+import Post from "../post/Post";
 
 function SingleStory() {
+  const content=`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+  officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
+  fugiat, reprehenderit praesentium blanditiis quos cupiditate ratione
+  atque, exercitationem quibusdam, reiciendis odio laboriosam?`;
   return (
     <div>
       <div className="singlestoryhead container-fluid my-2">
@@ -18,7 +24,7 @@ function SingleStory() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-8 m-0">
-            <div className="storyHeading">
+            <div className="storyHeading my-5">
               <span className="postTitle">
                 <h2 className="text-center">
                   {" "}
@@ -42,6 +48,23 @@ function SingleStory() {
               <h2 className="m-4"> <span className="chgedcolor">Some</span>  other stories</h2>
           </div>
         </div>
+        <div className="d-flex">
+        <Post 
+      img="https://images.pexels.com/photos/6711867/pexels-photo-6711867.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+      place="London"
+      category="Stay"
+      topic="Lorem ipsum dolor sit amet"
+      timeposted="1"
+      content={content} />
+
+      <Post 
+      img="https://images.pexels.com/photos/6758029/pexels-photo-6758029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+       place="Paris"
+      category="Food"
+      topic="Lorem ipsum dolor sit amet"
+      timeposted="2"
+      content={content} />
+      </div>
       </div>
         <Footer/>
     </div>

@@ -6,6 +6,7 @@ import Stories from './HomePageStories';
 import "./HomePage.css"
 import bgimage from "./hero.png"
 
+
 function Homepage() {
   return (
     <div className='container-fluid p-0 overflow-x-hidden'>

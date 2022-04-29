@@ -38,6 +38,11 @@
     margin-top: 15px;
     color:  #474545;
     cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
   .chgedcolor{

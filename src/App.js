@@ -18,33 +18,33 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/Places">
+          <Route exact path="/Places">
             <Navbar />
             <Places />
           </Route>
-          <Route path="/placesInfo">
+          <Route exact path="/city/:cityName">
             <Navbar />
             <PlacesInfo />
           </Route>
-          <Route path="/Stories">
+          <Route exact path="/Stories">
             <Navbar />
             <Stories />
           </Route>
-          <Route path="/AboutUs">
+          <Route exact path="/AboutUs">
             <Navbar />
             <About />
           </Route>
-          <Route path="/ContactUs">
+          <Route exact path="/ContactUs">
             <Navbar />
             <SingleStory/>
             {/* <Contact /> */}
           </Route>
-          <Route path="/Login">
+          <Route exact path="/Login">
             <Navbar />
             {/* <LoginPage/> */}
             <PlaceDetails />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Navbar />
             <Homepage />
           </Route>

@@ -19,13 +19,6 @@ function signInBtn(){
 	const container2 = ref.current; 
 	container2.classList.remove("right-panel-active");
 }
-// signUpButton.addEventListener('click', () => {
-// 	container1.classList.add("right-panel-active");
-// });
-
-// signInButton.addEventListener('click', () => {
-// 	container1.classList.remove("right-panel-active");
-// });
 
     return (
   <div className='body'>
@@ -66,7 +59,7 @@ function signInBtn(){
 			<div className="overlay-panel overlay-left">
 				<h1>Welcome Back!</h1>
 				<p>To keep connected with us please login with your personal info</p>
-				<button className="ghost" id="signIn"  onClick={signInBtn}>Sign In</button>
+				<button className="ghost button" id="signIn"  onClick={signInBtn}>Sign In</button>
 			</div>
 			<div className="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>

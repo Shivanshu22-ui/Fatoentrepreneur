@@ -3,7 +3,7 @@ import React from "react";
 import "./PlacesInfoHero.css"
 import { Carousel } from "3d-react-carousal";
 
-function PlacesInfoHero() {
+function PlacesInfoHero(props) {
   const data = [
     <img src="https://picsum.photos/800/300/?random" alt="1" />,
     <img src="https://picsum.photos/800/301/?random" alt="2" />,
@@ -12,13 +12,15 @@ function PlacesInfoHero() {
     <img src="https://picsum.photos/800/304/?random" alt="5" />,
   ];
 
+  console.log(props.city)
+
   return (
     <div className="container">
       <div className="row placesInfoHero d-flex align-items-center justify-content-center flex-wrap">
         <div className="col-5  ">
           <div className="placeTitle">
-            <h3>Paris </h3>
-            <p>The city of love</p>
+            <h3>{props.city.place}</h3>
+            <p>{props.city.name}</p>
           </div>
           <div className="placeSubtitle">
             {/* <p> <span><i class="fa-solid fa-location-dot  px-2 "></i></span> Resturant</p> */}

@@ -1,39 +1,44 @@
 import { Link } from "react-router-dom";
 import "./post.css";
 
-export default function Post({img}) {
+export default function Post(props) {
+  const heading =props.topic;
+  const elements =heading.split(" ");
+  const firstElement = elements[0]+" ";
+  let SecondElement="";
+  for (let i = 1; i < elements.length; i++) {
+     SecondElement=SecondElement+elements[i]+" ";
+  }
   return (
     <div className="post">
       <img
         className="postImg"
-        src={img}
+        src={props.img}
         alt=""
       />
       <div className="postInfo">
         <div className="postCats">
           <span className="postCat">
-            <Link className="link" to="/posts?cat=Music">
-              London
-            </Link>
+            <span className="link" >
+              {props.place}
+            </span>
           </span>
           <span className="postCat">
-            <Link className="link" to="/posts?cat=Music">
-              Stay
-            </Link>
+            <sapn className="link" >
+              {props.category}
+            </sapn>
           </span>
         </div>
         <span className="postTitle">
-          <Link to="/post/abc" className="link">
-          <span className="chgedcolor"> Lorem</span> ipsum dolor sit amet
-          </Link>
+          <p  className="link">
+          <span className="chgedcolor"> {firstElement}</span> 
+          {SecondElement}
+          </p>
         </span>
-        <span className="postDate">1 hour ago</span>
+        <span className="postDate">{props.timeposted} hour ago</span>
       </div>
       <p className="postDesc">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
-        fugiat, reprehenderit praesentium blanditiis quos cupiditate ratione
-        atque, exercitationem quibusdam, reiciendis odio laboriosam?
+      {props.content}
       </p>
     </div>
   );
