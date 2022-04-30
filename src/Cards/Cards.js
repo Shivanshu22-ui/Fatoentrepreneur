@@ -145,5 +145,16 @@ const ReviewCards = (props) => {
   );
 };
 
+const DashBoardCards=(props)=>{
+  return(
+    <div className="dashBoardcard m-4 d-flex flex-wrap align-items-center">
+      <div className="dashboardDetails ">
+        <h1 className="text-center">{props.title}</h1>
+        <h1 className="text-center dashBoarddata">{props.entry}</h1>
+      </div>
+    </div>
+  )
+}
+
 // export default Cards;
-export { PopularCityCards, PlacesCards, ClientCards, NearbyCard, ReviewCards };
+export { PopularCityCards, PlacesCards, ClientCards, NearbyCard, ReviewCards ,DashBoardCards };

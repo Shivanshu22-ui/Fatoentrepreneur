@@ -8,6 +8,7 @@ import PlacesInfo from "./Places/PlacesInfo/PlacesInfo";
 import LoginPage from "./LoginSignup/LoginPage";
 import PlaceDetails from "./Places/PlacesInfo/PlaceDetails/PlaceDetails";
 import SingleStory from "./Stories/SingleStory/SingleStory";
+import UserDashBoard from "./DashBoard/UserDashBoard";
 
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -17,35 +18,30 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <Navbar />
         <Switch>
           <Route exact path="/Places">
-            <Navbar />
-            <Places />
+            {/* <Places /> */}
+            <UserDashBoard/>
           </Route>
           <Route exact path="/city/:cityName">
-            <Navbar />
             <PlacesInfo />
           </Route>
           <Route exact path="/Stories">
-            <Navbar />
             <Stories />
           </Route>
           <Route exact path="/AboutUs">
-            <Navbar />
             <About />
           </Route>
           <Route exact path="/ContactUs">
-            <Navbar />
             <SingleStory/>
             {/* <Contact /> */}
           </Route>
           <Route exact path="/Login">
-            <Navbar />
             {/* <LoginPage/> */}
             <PlaceDetails />
           </Route>
           <Route exact path="/">
-            <Navbar />
             <Homepage />
           </Route>
         </Switch>

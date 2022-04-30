@@ -76,8 +76,8 @@ export default function Recommend() {
 
   const [active, setActive] = useState(1);
   return (
-    <Section id="recommend">
-      <div className="title">
+    <Section id="recommend" className="container">
+      <div className="title ">
         <h1>Popular Cities</h1>
       </div>
       <div className="packages">
@@ -94,7 +94,7 @@ export default function Recommend() {
           })}
         </ul>
       </div>
-      <div className="destinations">
+      <div className="destinations d-flex flex-wrap ">
         {data.map((destination) => {
           return (
             <PopularCityCards
@@ -140,11 +140,16 @@ const Section = styled.section`
     }
   }
   .destinations {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8rem;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
     padding: 0 4rem;
+    justify-content:space-between;
     
+  }
+  @media screen and (max-width: 776px){
+    .destinations {
+      justify-content:cenetr;
+    }
   }
   @media screen and (min-width: 280px) and (max-width: 768px) {
     .packages {

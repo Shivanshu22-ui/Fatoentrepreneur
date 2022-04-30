@@ -17,7 +17,7 @@ p {
 
 /* Cards */
 .card-column {
-  width: 33%;
+  width: 450px;
   float: left;
   padding: 6%;
   box-sizing: border-box;
