@@ -21,8 +21,8 @@ function App() {
       <Navbar />
         <Switch>
           <Route exact path="/Places">
-            {/* <Places /> */}
-            <UserDashBoard/>
+            <Places />
+            {/* <UserDashBoard/> */}
           </Route>
           <Route exact path="/city/:cityName">
             <PlacesInfo />
