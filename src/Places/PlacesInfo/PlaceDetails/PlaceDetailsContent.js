@@ -5,6 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 import { PlacesCards, NearbyCard } from "../../../Cards/Cards";
 import PlaceDetailsReviews from "./PlaceDetailsReviews";
 import { NavLink, Link } from "react-router-dom";
+import Comments from "../../../comments/Comments";
 
 function PlaceDetailsContent() {
 
@@ -139,7 +140,8 @@ function PlaceDetailsContent() {
         </p>
       </div>
       <div className="placeReviews">
-        <PlaceDetailsReviews />
+        {/* <PlaceDetailsReviews /> */}
+        <Comments/>
         <p style={{ fontSize: "14px", fontWeight: "600", color: "#474545" }}>
           {" "}
           <span style={{ color: "#23d3d3" }}>Login</span> to review
