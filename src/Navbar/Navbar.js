@@ -35,7 +35,7 @@ function Navbar() {
             <li className="m-2 p-2">
               <Link to="/Login"> LogIn/SignUp</Link>
             </li>
-            <button>Add Places/Story</button>
+           <Link to="/AddPlaces"> <button>Add Places/Story</button></Link>
           </div>
         </div>
       </div>

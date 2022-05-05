@@ -1,3 +1,6 @@
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+
 import Navbar from "./Navbar/Navbar";
 import Homepage from "./HomePage/Homepage";
 import Places from "./Places/Places";
@@ -9,10 +12,11 @@ import LoginPage from "./LoginSignup/LoginPage";
 import PlaceDetails from "./Places/PlacesInfo/PlaceDetails/PlaceDetails";
 import SingleStory from "./Stories/SingleStory/SingleStory";
 import UserDashBoard from "./DashBoard/UserDashBoard";
-
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./LoginSignup/LoginPage";
+import AddPlaces from "./AddPlaces/AddPlaces";
+
+
+
 
 function App() {
   return (
@@ -27,6 +31,9 @@ function App() {
           <Route exact path="/city/:cityName">
             <PlacesInfo />
           </Route>
+          <Route exact path="/AddPlaces">
+            <AddPlaces/>
+          </Route>
           <Route exact path="/Stories">
             <Stories />
           </Route>
@@ -34,8 +41,8 @@ function App() {
             <About />
           </Route>
           <Route exact path="/ContactUs">
-            <SingleStory/>
-            {/* <Contact /> */}
+            {/* <SingleStory/> */}
+            <Contact />
           </Route>
           <Route exact path="/Login">
             {/* <LoginPage/> */}

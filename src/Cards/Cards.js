@@ -37,7 +37,7 @@ const PlacesCards = (props) => {
   }
   //console.log(list);
   return (
-    <div className="placesCard">
+    <div className="placesCard" onClick={props.clickHandler}>
       <div className="imgDetails">
         <img src={props.image} alt="" />
         <div className="imageContent">

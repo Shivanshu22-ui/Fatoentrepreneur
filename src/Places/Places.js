@@ -1,12 +1,15 @@
-import React ,{ Component } from "react";
+import React ,{ Component, useEffect } from "react";
 import Footer from "../Footer/Footer";
 import DropDownNav from "./Navbarmenu";
 import "./Places.css";
 import { PlacesCards } from "../Cards/Cards";
 import PlacesInfo from "./PlacesInfo/PlacesInfo";
 import { NavLink, Link } from "react-router-dom";
+import {useHistory } from 'react-router-dom'
 
 function Places () {
+  const location = useHistory();
+
   const placesData = [
     {
       place: "London",
@@ -70,17 +73,21 @@ function Places () {
     },
   ];
 
-// const getData = () => {
-//     fetch(
-// "https://fatoentrepreneur.herokuapp.com/places")
-//         .then((res) => res.json())
-//         .then((json) => {
-//             this.setState({
-//                 items: json,
-//                 DataisLoaded: true
-//             });
-//         })
-// }
+const getData = () => {
+    fetch(
+"https://fatoentrepreneur.herokuapp.com/places")
+        .then((res) => res.json())
+        .then((json) => {
+           placesData=json.result
+        })
+}
+// q1
+getData(); 
+
+const clickHandler = (name) => {
+  location.push(`place/${name}`)
+}
+
   return (
     <div className="places ">
        <DropDownNav />
@@ -89,7 +96,7 @@ function Places () {
         
         <hr />
         {placesData.map((places, index) => {
-          return <Link to={places.linkto}> <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/></Link>;
+          return <PlacesCards clickHandler= {() => clickHandler(places.place)} place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/>
         })}
       </div>
        <h3 className=" my-4 mx px-5 container-fluid chgedcolor" >Nearest To You</h3>
@@ -97,7 +104,7 @@ function Places () {
         
         <hr />
         {placesData.map((places, index) => {
-          return <Link to={places.linkto}> <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/></Link>;
+          return <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/>
         })}
       </div>
 

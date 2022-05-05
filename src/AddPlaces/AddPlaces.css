@@ -1,0 +1,27 @@
+.addplaces{
+    background-color: #f9f9f9;
+}
+.addplaces .addPlaceHeading{
+    color: #474545;
+}
+.addplaces .formfield{
+    padding: 35px;
+    background-color: white;
+    margin: 15px;
+}
+.addplaces .formfield .fields label{
+    width: 100%;
+
+}
+.addplaces .formfield input,select,textarea{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 5px 0;
+    color: #474545;
+    border-bottom: 2px solid grey;
+}
+.addplaces .formfield textarea{
+    border: 1px solid #5e5e5e3b;
+    border-bottom: 2px solid grey;
+}
