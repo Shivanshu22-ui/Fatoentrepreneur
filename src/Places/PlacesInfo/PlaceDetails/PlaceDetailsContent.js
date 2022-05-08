@@ -141,7 +141,7 @@ function PlaceDetailsContent() {
       </div>
       <div className="placeReviews">
         {/* <PlaceDetailsReviews /> */}
-        <Comments/>
+        <Comments   currentUserId="1"/>
         <p style={{ fontSize: "14px", fontWeight: "600", color: "#474545" }}>
           {" "}
           <span style={{ color: "#23d3d3" }}>Login</span> to review
