@@ -95,7 +95,7 @@ function Homepage() {
     <Section id="services" className="px-4">
       {data.map((service, index) => {
         return (
-          <div className="service ">
+          <div className="service" key={index}>
             <div className="icon">
               <img src={service.icon} alt="" />
             </div>

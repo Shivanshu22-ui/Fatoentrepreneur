@@ -28,7 +28,7 @@ function App() {
             <Places />
             {/* <UserDashBoard/> */}
           </Route>
-          <Route exact path="/city/:cityName">
+          <Route exact path="/city/:cityName/:cityID">
             <PlacesInfo />
           </Route>
           <Route exact path="/AddPlaces">
@@ -44,7 +44,7 @@ function App() {
             {/* <SingleStory/> */}
             <Contact />
           </Route>
-          <Route exact path="/Login">
+          <Route exact path="/place/:placeName/:placeID">
             {/* <LoginPage/> */}
             <PlaceDetails />
           </Route>

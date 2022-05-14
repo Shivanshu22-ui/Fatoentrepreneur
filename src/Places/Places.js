@@ -74,14 +74,12 @@ function Places () {
   ];
 
 const getData = () => {
-    fetch(
-"https://fatoentrepreneur.herokuapp.com/places")
-        .then((res) => res.json())
-        .then((json) => {
-           placesData=json.result
-        })
+    fetch("https://fatoentrepreneur.herokuapp.com/places")
+      .then((res) => res.json())
+      .then((json) => {
+        placesData=json.result
+    })
 }
-// q1
 getData(); 
 
 const clickHandler = (name) => {

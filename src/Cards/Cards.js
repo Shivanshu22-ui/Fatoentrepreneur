@@ -20,7 +20,7 @@ const PopularCityCards = (destination) => {
             <img src={info1} alt="" />
             <img src={info2} alt="" />
           </div>
-          <h4>{destination.cost}</h4>
+          <h4>200</h4>
         </div>
         <div className="distance">
           <span>{destination.duration}</span>
@@ -33,7 +33,7 @@ const PopularCityCards = (destination) => {
 const PlacesCards = (props) => {
   const list = [];
   for (let index = 0; index < props.stars; index++) {
-    list.push(<span className="fa fa-star checked"></span>);
+    list.push(<span className="fa fa-star checked" key={index}></span>);
   }
   //console.log(list);
   return (
