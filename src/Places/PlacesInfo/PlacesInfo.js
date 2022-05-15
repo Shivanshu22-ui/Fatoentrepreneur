@@ -1,135 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./PLacesInfo.css";
 import PlacesInfoHero from "./PlacesInfoHero";
 import PlaceContentMain from "./PlaceContentMain";
 import PlaceInfoNav from "./PlaceInfoNav";
 import Footer from "../../assets/Components/Footer/Footer";
 import { PlacesCards } from "../../assets/Components/Cards/Cards";
-import { NavLink, Link, useParams } from "react-router-dom";
+import { NavLink, Link, useParams ,useHistory} from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 function PlacesInfo({match}) {
-  let {cityName} = useParams()
-  console.log({cityName})
-  const placesData = [
-    {
-      place: "London",
-      image:
-        "https://layover.city/wp-content/uploads/2019/11/Bar-Fisk__2018_Sherylleysner_Bar-Fisk_RK10280-540x480.jpg",
-      type: "Resturant",
-      stars: 4,
-      reviews: 19277,
-      name: "Flor",
-      linkto: "/placesInfo",
-    },
-    {
-      place: "Delhi",
-      image:
-        "https://layover.city/wp-content/uploads/2019/11/Flor-London-2019-1-540x480.jpg",
-      type: "Sight",
-      stars: 3,
-      reviews: 1758,
-      name: "The 9 Streets",
-      linkto: "/placesInfo",
-    },
-    {
-      place: "London",
-      image:
-        "https://layover.city/wp-content/uploads/2019/10/photo-1536918861100-77e1e6a4480d-540x480.jpeg",
-      type: "Sight",
-      stars: 5,
-      reviews: 2064,
-      name: "Bar Fisk",
-      linkto: "/placesInfo",
-    },
-    {
-      place: "London",
-      image:
-        "https://layover.city/wp-content/uploads/2019/10/Bedroom-ChilternFirehouse-London-CRHotel-540x480.jpg",
-      type: "Hotel",
-      stars: 4,
-      reviews: 1879,
-      name: "The Dylan",
-      linkto: "/placesInfo",
-    },
-    {
-      place: "Jaipur",
-      image:
-        "https://layover.city/wp-content/uploads/2019/10/pexels-photo-2372978-540x480.jpeg",
-      type: "Museum",
-      stars: 4,
-      reviews: 879,
-      name: "Van Gogh Museum",
-      linkto: "/placesInfo",
-    },
-    {
-      place: "Amsterdam",
-      image:
-        "https://layover.city/wp-content/uploads/2019/10/photo-1523475616631-f24c7e4c17ba-540x480.jpeg",
-      type: "Activity",
-      stars: 3,
-      reviews: 19277,
-      name: "Tolhuistuin",
-      linkto: "/placesInfo",
-    },
-    ,
-    {
-      place: "Delhi",
-      image:
-        "https://layover.city/wp-content/uploads/2019/11/Flor-London-2019-1-540x480.jpg",
-      type: "Sight",
-      stars: 3,
-      reviews: 1758,
-      name: "The 9 Streets",
-      linkto: "/placesInfo",
-    },
-    {
-      place: "London",
-      image:
-        "https://layover.city/wp-content/uploads/2019/10/photo-1536918861100-77e1e6a4480d-540x480.jpeg",
-      type: "Sight",
-      stars: 5,
-      reviews: 2064,
-      name: "Bar Fisk",
-      linkto: "/placesInfo",
-    },
-    {
-      place: "London",
-      image:
-        "https://layover.city/wp-content/uploads/2019/10/Bedroom-ChilternFirehouse-London-CRHotel-540x480.jpg",
-      type: "Hotel",
-      stars: 4,
-      reviews: 1879,
-      name: "The Dylan",
-      linkto: "/placesInfo",
-    },
-    {
-      place: "Jaipur",
-      image:
-        "https://layover.city/wp-content/uploads/2019/10/pexels-photo-2372978-540x480.jpeg",
-      type: "Museum",
-      stars: 4,
-      reviews: 879,
-      name: "Van Gogh Museum",
-      linkto: "/placesInfo",
-    }
-  ];
+  const location = useHistory();
+  let {cityID} = useParams();
+
+  const [cityData,setCityData] = useState(null);
+  const [placesData,setPlacesData] = useState(null);
+  const [loading,setLoading] = useState(true);
+  const [loadingPlaces,setLoadingPlaces] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setLoadingPlaces(true);
+    fetch(`https://fatoentrepreneur.herokuapp.com/city/${cityID}`)
+      .then((res) => res.json())
+      .then((json) => {
+        setCityData(json.city)
+        // console.log(json.city)
+        setLoading(false);
+    })
+
+    fetch("https://fatoentrepreneur.herokuapp.com/places")
+      .then((res) => res.json())
+      .then((json) => {
+        // console.log(json.result)
+        setPlacesData(json.result)
+        setLoadingPlaces(false);
+    })
+
+  },[])
+
+  const placeClickHandler = (place) => {
+    location.push(`/place/${place.category}/${place._id}`)
+  }
 
   return (
+    loading ? 'loading' : 
     <div className="container-fluid p-0">
       <div className="placesInfo">
-        <PlacesInfoHero city={placesData[placesData.findIndex(item => item.place==cityName)]}/>
+        <PlacesInfoHero city={cityData}/>
       </div>
-      <PlaceContentMain />
+      <PlaceContentMain city={cityData}/>
       <PlaceInfoNav />
       
        <div className="placesCards d-flex flex-wrap justify-content-between align-items-center">
         
         <hr />
-        {placesData.map((places, index) => {
-          return <Link to={places.linkto}> <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/></Link>;
-        })}
+        { loadingPlaces ? 'Loading' :
+          placesData.filter((item) => {
+            return item.city._id==cityID //All places which have same city as their location will get filtered out
+          })
+          .map((place,index) => {
+            return <PlacesCards key={index} clickHandler = {() => placeClickHandler(place)} place = {place.city.city} image={place.city.images[0]} type={place.subcategory} stars={4} reviews={place.comments} name={place.category}/> //yahan par images galat use ki hai kyuki array khali hai aur number of stars nahi hai
+          })
+        }
       </div>
       <Footer />
     </div>

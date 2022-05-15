@@ -7,18 +7,18 @@ import PlaceDetailsReviews from "./PlaceDetailsReviews";
 import { NavLink, Link } from "react-router-dom";
 import Comments from "../../../assets/Components/comments/Comments";
 
-function PlaceDetailsContent() {
-
+function PlaceDetailsContent({ place }) {
+  // console.log(place);
   return (
     <div className="container placeDetailsContent">
       <nav className="miniNav">
         <ul className="d-flex my-4">
-          <li className="mx-2">Paris</li>
-          <li className="mx-2">Food & Drinks</li>
+          <li className="mx-2">{place.city.city}</li>
+          <li className="mx-2">{place.subCategory}</li>
         </ul>
       </nav>
       <p className="mx-2 placeName">
-        Le Servan{" "}
+        {place.category}{" "}
         <span>
           <i class="fa-regular fa-circle-check verified mx-3"></i>
         </span>
