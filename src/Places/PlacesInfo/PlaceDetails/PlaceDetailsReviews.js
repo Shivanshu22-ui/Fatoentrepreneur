@@ -1,6 +1,6 @@
 import React from 'react'
 import "./PlaceDetailsReviews.css"
-import {ReviewCards} from "../../../Cards/Cards";
+import {ReviewCards} from "../../../assets/Components/Cards/Cards";
 
 function PlaceDetailsReviews() {
   return (

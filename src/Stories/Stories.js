@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../Footer/Footer';
+import Footer from '../assets/Components/Footer/Footer';
 import Posts from './posts/Posts';
 import Sidebar from './sidebar/Sidebar';
 import "./Stories.css"

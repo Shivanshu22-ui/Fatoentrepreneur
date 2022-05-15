@@ -1,8 +1,8 @@
 import React ,{ Component, useEffect } from "react";
-import Footer from "../Footer/Footer";
+import Footer from "../assets/Components/Footer/Footer";
 import DropDownNav from "./Navbarmenu";
 import "./Places.css";
-import { PlacesCards } from "../Cards/Cards";
+import { PlacesCards } from "../assets/Components/Cards/Cards";
 import PlacesInfo from "./PlacesInfo/PlacesInfo";
 import { NavLink, Link } from "react-router-dom";
 import {useHistory } from 'react-router-dom'

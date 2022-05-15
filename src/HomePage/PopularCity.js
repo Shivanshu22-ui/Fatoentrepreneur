@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Destination1 from "./Destination1.png";
-import Destination2 from "./Destination2.png";
-import Destination3 from "./Destination3.png";
-import Destination4 from "./Destination4.png"; 
-import Destination5 from "./Destination5.png";
-import Destination6 from "./Destination6.png";
-import { PopularCityCards } from "../Cards/Cards";
+import Destination1 from "../assets/images/Destination1.png";
+import Destination2 from "../assets/images/Destination2.png";
+import Destination3 from "../assets/images/Destination3.png";
+import Destination4 from "../assets/images/Destination4.png"; 
+import Destination5 from "../assets/images/Destination5.png";
+import Destination6 from "../assets/images/Destination6.png";
+import { PopularCityCards } from "../assets/Components/Cards/Cards";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Recommend() {

@@ -1,7 +1,7 @@
 import React from 'react'
-import Footer from '../Footer/Footer'
+import Footer from '../assets/Components/Footer/Footer'
 import "./UserDashboard.css"
-import {DashBoardCards} from "../Cards/Cards"
+import {DashBoardCards} from "../assets/Components/Cards/Cards"
 
 function UserDashBoard() {
   return (

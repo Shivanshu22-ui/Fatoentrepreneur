@@ -2,8 +2,8 @@ import React from "react";
 import "./PlaceDetails.css";
 import { Carousel } from "@trendyol-js/react-carousel";
 import PlaceDetailsContent from "./PlaceDetailsContent";
-import Footer from "../../../Footer/Footer"
-import { PlacesCards, NearbyCard } from "../../../Cards/Cards";
+import Footer from "../../../assets/Components/Footer/Footer"
+import { PlacesCards, NearbyCard } from "../../../assets/Components/Cards/Cards";
 import { NavLink, Link } from "react-router-dom";
 
 function PlaceDetails() {

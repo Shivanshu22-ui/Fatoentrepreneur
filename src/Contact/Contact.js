@@ -1,7 +1,7 @@
 import React from "react";
 import "./Contact.css";
-import Footer from "../Footer/Footer";
-import contactimg from "./Contact.jpg";
+import Footer from "../assets/Components/Footer/Footer";
+import contactimg from "../assets/images/Contact.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Contact() {

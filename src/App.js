@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./assets/Components/Navbar/Navbar";
 import Homepage from "./HomePage/Homepage";
 import Places from "./Places/Places";
 import Contact from "./Contact/Contact";
@@ -25,8 +25,8 @@ function App() {
       <Navbar />
         <Switch>
           <Route exact path="/Places">
-            <Places />
-            {/* <UserDashBoard/> */}
+            {/* <Places /> */}
+            <UserDashBoard/>
           </Route>
           <Route exact path="/city/:cityName">
             <PlacesInfo />

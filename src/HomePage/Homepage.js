@@ -1,17 +1,15 @@
 import React from 'react'
 import styled from "styled-components";
 
-
-
 import "./HomePage.css"
 import PopularCity from './PopularCity'
-import Footer from '../Footer/Footer';
+import Footer from '../assets/Components/Footer/Footer';
 import Stories from './HomePageStories';
-import bgimage from "./hero.png"
-import service1 from "./service1.png";
-import service2 from "./service2.png";
-import service3 from "./service3.png";
-import service4 from "./service4.png";
+import bgimage from "../assets/images/hero.png"
+import service1 from "../assets/images/service1.png";
+import service2 from "../assets/images/service2.png";
+import service3 from "../assets/images/service3.png";
+import service4 from "../assets/images/service4.png";
 
 
 function Homepage() {

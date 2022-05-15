@@ -2,10 +2,10 @@ import React from "react";
 import "./PlaceDetailsContent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Accordion from "react-bootstrap/Accordion";
-import { PlacesCards, NearbyCard } from "../../../Cards/Cards";
+import { PlacesCards, NearbyCard } from "../../../assets/Components/Cards/Cards";
 import PlaceDetailsReviews from "./PlaceDetailsReviews";
 import { NavLink, Link } from "react-router-dom";
-import Comments from "../../../comments/Comments";
+import Comments from "../../../assets/Components/comments/Comments";
 
 function PlaceDetailsContent() {
 

@@ -4,7 +4,7 @@ import "./SingleStory.css";
 // import "bootstrap/dist/css/bootstrap.css";
 // import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import Sidebar from "../sidebar/Sidebar";
-import Footer from "../../Footer/Footer";
+import Footer from "../../assets/Components/Footer/Footer";
 import Posts from "../posts/Posts";
 import Post from "../post/Post";
 

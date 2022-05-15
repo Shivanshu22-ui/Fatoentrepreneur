@@ -3,7 +3,7 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 import "./AddPlaces.css";
-import Footer from "../Footer/Footer";
+import Footer from "../assets/Components/Footer/Footer";
 
 function AddPlaces() {
   const highlights = [
