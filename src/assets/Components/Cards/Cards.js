@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import "./Cards.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import info1 from "./info1.png";
-import info2 from "./info2.png";
-import img1 from "./o.jpg";
+import info1 from "../../images/info1.png";
+import info2 from "../../images/info2.png";
 import { Link } from "react-router-dom";
 
 const PopularCityCards = (destination) => {
@@ -35,7 +34,6 @@ const PlacesCards = (props) => {
   for (let index = 0; index < props.stars; index++) {
     list.push(<span className="fa fa-star checked" key={index}></span>);
   }
-  //console.log(list);
   return (
     <div className="placesCard" onClick={props.clickHandler}>
       <div className="imgDetails">

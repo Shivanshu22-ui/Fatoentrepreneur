@@ -53,7 +53,7 @@ function PlacesInfo({match}) {
       <PlaceContentMain city={cityData}/>
       <PlaceInfoNav />
       
-       <div className="placesCards d-flex flex-wrap justify-content-between align-items-center">
+       <div className="placesCards d-flex flex-wrap justify-content-start align-items-center">
         
         <hr />
         { loadingPlaces ? 'Loading' :

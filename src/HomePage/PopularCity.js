@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Destination1 from "../assets/images/Destination1.png";
-import Destination2 from "../assets/images/Destination2.png";
-import Destination3 from "../assets/images/Destination3.png";
-import Destination4 from "../assets/images/Destination4.png"; 
-import Destination5 from "../assets/images/Destination5.png";
-import Destination6 from "../assets/images/Destination6.png";
 import { PopularCityCards } from "../assets/Components/Cards/Cards";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -14,13 +8,7 @@ export default function Recommend() {
   const [loading,setLoading] = useState(true);
   const [countryData,setCountryData] = useState([]);
 
-  const packages = [
-    "Weekend Break",
-    "Package Holiday",
-    "Group Tour",
-    "Long Term Travel",
-  ];
-
+  
   const cityClickHandler = (e) => {
     // console.log("clicked",e)
     location.push(`city/${e.city}/${e._id}`)
@@ -37,26 +25,10 @@ export default function Recommend() {
     })
   },[]);
 
-  const [active, setActive] = useState(1);
   return (
     <Section id="recommend" className="container">
       <div className="title ">
         <h1>Popular Cities</h1>
-      </div>
-      <div className="packages">
-        <ul>
-          {packages.map((pkg, index) => {
-            return (
-              <li
-                key={index}
-                className={active === index + 1 ? "active" : ""}
-                onClick={() => setActive(index + 1)}
-              >
-                {pkg}
-              </li>
-            );
-          })}
-        </ul>
       </div>
       <div className="destinations d-flex flex-wrap ">
         {

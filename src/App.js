@@ -25,8 +25,8 @@ function App() {
       <Navbar />
         <Switch>
           <Route exact path="/Places">
-            {/* <Places /> */}
-            <UserDashBoard/>
+            <Places />
+            {/* <UserDashBoard/> */}
           </Route>
           <Route exact path="/city/:cityName/:cityID">
             <PlacesInfo />
@@ -40,12 +40,14 @@ function App() {
           <Route exact path="/AboutUs">
             <About />
           </Route>
+          <Route exact path="/Login">
+            <LoginPage/>
+          </Route>
           <Route exact path="/ContactUs">
             {/* <SingleStory/> */}
             <Contact />
           </Route>
           <Route exact path="/place/:placeName/:placeID">
-            {/* <LoginPage/> */}
             <PlaceDetails />
           </Route>
           <Route exact path="/">

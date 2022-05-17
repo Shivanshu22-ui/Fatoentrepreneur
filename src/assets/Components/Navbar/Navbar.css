@@ -35,6 +35,10 @@
     width: 100%; 
     left: 0; 
   }
+  .navBar .navItems ul li.active::after{
+    width: 100%; 
+    left: 0; 
+  }
 .navBar  li a{
     text-decoration: none;
     color: #0077b6;
