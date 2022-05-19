@@ -1,13 +1,14 @@
-import React ,{ Component, useEffect } from "react";
+import React, { Component, useEffect ,useState} from "react";
+import { NavLink, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 import Footer from "../assets/Components/Footer/Footer";
 import DropDownNav from "./Navbarmenu";
 import "./Places.css";
 import { PlacesCards } from "../assets/Components/Cards/Cards";
 import PlacesInfo from "./PlacesInfo/PlacesInfo";
-import { NavLink, Link } from "react-router-dom";
-import {useHistory } from 'react-router-dom'
 
-function Places () {
+function Places() {
   const location = useHistory();
 
   const placesData = [
@@ -18,8 +19,8 @@ function Places () {
       type: "Resturant",
       stars: 4,
       reviews: 19277,
-      name:"Flor",
-      linkto :"/placesInfo"
+      name: "Flor",
+      linkto: "/placesInfo",
     },
     {
       place: "Delhi",
@@ -28,8 +29,8 @@ function Places () {
       type: "Sight",
       stars: 3,
       reviews: 1758,
-      name:"The 9 Streets",
-      linkto :"/placesInfo"
+      name: "The 9 Streets",
+      linkto: "/placesInfo",
     },
     {
       place: "London",
@@ -38,8 +39,8 @@ function Places () {
       type: "Sight",
       stars: 5,
       reviews: 2064,
-      name:"Bar Fisk",
-      linkto :"/placesInfo"
+      name: "Bar Fisk",
+      linkto: "/placesInfo",
     },
     {
       place: "London",
@@ -48,8 +49,8 @@ function Places () {
       type: "Hotel",
       stars: 4,
       reviews: 1879,
-      name:"The Dylan",
-      linkto :"/placesInfo"
+      name: "The Dylan",
+      linkto: "/placesInfo",
     },
     {
       place: "Jaipur",
@@ -58,8 +59,8 @@ function Places () {
       type: "Museum",
       stars: 4,
       reviews: 879,
-      name:"Van Gogh Museum",
-      linkto :"/placesInfo"
+      name: "Van Gogh Museum",
+      linkto: "/placesInfo",
     },
     {
       place: "Amsterdam",
@@ -68,48 +69,100 @@ function Places () {
       type: "Activity",
       stars: 3,
       reviews: 19277,
-      name:"Tolhuistuin",
-      linkto :"/placesInfo"
+      name: "Tolhuistuin",
+      linkto: "/placesInfo",
     },
   ];
 
-const getData = () => {
-    fetch("https://fatoentrepreneur.herokuapp.com/places")
+  // const getData = () => {
+  //     fetch("https://fatoentrepreneur.herokuapp.com/places")
+  //       .then((res) => res.json())
+  //       .then((json) => {
+  //         placesData=json.result
+  //         console.log(placesData)
+  //     })
+  // }
+  // getData();
+  const [placeData, setPlaceData] = useState([]);
+  const [loading, setLoading] = useState(null);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(`https://fatoentrepreneur.herokuapp.com/places`)
       .then((res) => res.json())
       .then((json) => {
-        placesData=json.result
-    })
-}
-getData(); 
+        setPlaceData(json.result);
+        setLoading(false);
+      });
+  }, []);
 
-const clickHandler = (name) => {
-  location.push(`place/${name}`)
-}
+  const clickHandler = (name) => {
+    location.push(`place/${name}`);
+  };
 
   return (
-    <div className="places ">
-       <DropDownNav />
-       <h3 className=" mt-4 mx px-5 container-fluid chgedcolor" >Recommended For You</h3>
-      <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
-        
+    <>
+    <div className="places">
+      <DropDownNav />
+      <h3 className=" mt-4 mx px-5 container-fluid chgedcolor">
+        Recommended For You
+      </h3>
+      <div className="placesCards d-flex flex-wrap justify-content-start align-items-center">
         <hr />
-        {placesData.map((places, index) => {
-          return <PlacesCards clickHandler= {() => clickHandler(places.place)} place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/>
+        
+        { loading?'Loading':placeData.map((places, index) => {
+          return (
+           
+            <PlacesCards
+              clickHandler={() => clickHandler(places.place)}
+              place={places.city.city}
+              image={places.city.images[0]}
+              type={places.subCategory}
+              stars="4"
+              reviews={places.likes}
+              name={places.category}
+            />
+          );
         })}
+      
       </div>
-       <h3 className=" my-4 mx px-5 container-fluid chgedcolor" >Nearest To You</h3>
-      <div className="placesCards d-flex flex-wrap justify-content-center align-items-center">
-        
+      <h3 className=" my-4 mx px-5 container-fluid chgedcolor">
+        Nearest To You
+      </h3>
+      <div className="placesCards d-flex flex-wrap justify-content-start align-items-center">
         <hr />
-        {placesData.map((places, index) => {
-          return <PlacesCards place = {places.place} image={places.image} type={places.type} stars={places.stars} reviews={places.reviews} name={places.name}/>
+        {/* {placesData.map((places, index) => {
+          return (
+            <PlacesCards
+              place={places.place}
+              image={places.image}
+              type={places.type}
+              stars={places.stars}
+              reviews={places.reviews}
+              name={places.name}
+            />
+          );
+        })} */}
+        { loading?'Loading':placeData.map((places, index) => {
+          return (
+            <PlacesCards
+              clickHandler={() => clickHandler(places.place)}
+              place={places.city.city}
+              image={places.city.images[0]}
+              type={places.subCategory}
+              stars="4"
+              reviews={places.likes}
+              name={places.category}
+            />
+          );
         })}
       </div>
 
-{/*      
+      {/*      
       <PlacesInfo/> */}
-      <Footer />
     </div>
+      <Footer />
+    </>
   );
 }
 

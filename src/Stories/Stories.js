@@ -7,6 +7,7 @@ import "./Stories.css"
 
 function Stories() {
   return (
+    <div>
     <div className='container-fluid'>
       <div className="header">
       <div className="headerTitles">
@@ -28,6 +29,7 @@ function Stories() {
         <Sidebar image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIhJRbOCmqDsffPwzxreF--6RR0_eodMWA2Q&usqp=CAU'/>
           </div>
       </div>
+    </div>
         <Footer/>
     </div>
   )

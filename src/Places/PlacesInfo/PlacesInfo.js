@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { NavLink, Link, useParams ,useHistory} from "react-router-dom";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+
 import "./PLacesInfo.css";
 import PlacesInfoHero from "./PlacesInfoHero";
 import PlaceContentMain from "./PlaceContentMain";
 import PlaceInfoNav from "./PlaceInfoNav";
 import Footer from "../../assets/Components/Footer/Footer";
 import { PlacesCards } from "../../assets/Components/Cards/Cards";
-import { NavLink, Link, useParams ,useHistory} from "react-router-dom";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 function PlacesInfo({match}) {
   const location = useHistory();

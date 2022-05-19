@@ -52,3 +52,8 @@
     color: white;
     background-color: #48cae4;
 }
+.navBar button:hover{
+    color: #48cae4;
+    background-color: white;
+    border: 1px solid #48cae4;
+}

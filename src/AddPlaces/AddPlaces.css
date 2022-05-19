@@ -25,3 +25,16 @@
     border: 1px solid #5e5e5e3b;
     border-bottom: 2px solid grey;
 }
+.addplaces .submitbtn{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: #48cae4;
+}
+.addplaces .submitbtn:hover{
+    color: #48cae4;
+    background-color: white;
+    border: 1px solid #48cae4;
+}

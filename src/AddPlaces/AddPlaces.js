@@ -162,6 +162,12 @@ function AddPlaces() {
                 <option value="Food and Drink">Main Course</option>
               </select>
             </label>
+            <h6>Description</h6>
+            <textarea
+              rows="5"
+              cols=""
+              placeholder="Item description"
+            ></textarea>
           </div>
           <div className="fields my-4">
             <label htmlFor="place">
@@ -253,64 +259,96 @@ function AddPlaces() {
           </div>
         </div>
         <div className="formfield">
-          <h4>Social Networks </h4>
+          <h4> Opening Hours </h4>
           <div className="fields d-flex  my-4">
-              <label htmlFor="place" className="mx-2">
-                <input type="text" placeholder="day" value="Monday"/>
-              </label>
-              <label htmlFor="place" className="mx-2">
-                <input type="Text" placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM" />
-              </label>
+            <label htmlFor="place" className="mx-2">
+              <input type="text" placeholder="day" value="Monday" />
+            </label>
+            <label htmlFor="place" className="mx-2">
+              <input
+                type="Text"
+                placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM"
+              />
+            </label>
           </div>
           <div className="fields d-flex  my-4">
-              <label htmlFor="place" className="mx-2">
-                <input type="text" placeholder="day" value="Tuesday"/>
-              </label>
-              <label htmlFor="place" className="mx-2">
-                <input type="Text" placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM" />
-              </label>
+            <label htmlFor="place" className="mx-2">
+              <input type="text" placeholder="day" value="Tuesday" />
+            </label>
+            <label htmlFor="place" className="mx-2">
+              <input
+                type="Text"
+                placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM"
+              />
+            </label>
           </div>
           <div className="fields d-flex  my-4">
-              <label htmlFor="place" className="mx-2">
-                <input type="text" placeholder="day" value="Wednesday"/>
-              </label>
-              <label htmlFor="place" className="mx-2">
-                <input type="Text" placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM" />
-              </label>
+            <label htmlFor="place" className="mx-2">
+              <input type="text" placeholder="day" value="Wednesday" />
+            </label>
+            <label htmlFor="place" className="mx-2">
+              <input
+                type="Text"
+                placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM"
+              />
+            </label>
           </div>
           <div className="fields d-flex  my-4">
-              <label htmlFor="place" className="mx-2">
-                <input type="text" placeholder="day" value="Thursday"/>
-              </label>
-              <label htmlFor="place" className="mx-2">
-                <input type="Text" placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM" />
-              </label>
+            <label htmlFor="place" className="mx-2">
+              <input type="text" placeholder="day" value="Thursday" />
+            </label>
+            <label htmlFor="place" className="mx-2">
+              <input
+                type="Text"
+                placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM"
+              />
+            </label>
           </div>
           <div className="fields d-flex  my-4">
-              <label htmlFor="place" className="mx-2">
-                <input type="text" placeholder="day" value="Friday"/>
-              </label>
-              <label htmlFor="place" className="mx-2">
-                <input type="Text" placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM" />
-              </label>
+            <label htmlFor="place" className="mx-2">
+              <input type="text" placeholder="day" value="Friday" />
+            </label>
+            <label htmlFor="place" className="mx-2">
+              <input
+                type="Text"
+                placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM"
+              />
+            </label>
           </div>
           <div className="fields d-flex  my-4">
-              <label htmlFor="place" className="mx-2">
-                <input type="text" placeholder="day" value="Saturday"/>
-              </label>
-              <label htmlFor="place" className="mx-2">
-                <input type="Text" placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM" />
-              </label>
+            <label htmlFor="place" className="mx-2">
+              <input type="text" placeholder="day" value="Saturday" />
+            </label>
+            <label htmlFor="place" className="mx-2">
+              <input
+                type="Text"
+                placeholder="9:00AM - 5:00 PM OR 9:00AM - 11:00 AM"
+              />
+            </label>
           </div>
           <div className="fields d-flex  my-4">
-              <label htmlFor="place" className="mx-2">
-                <input type="text" placeholder="day" value="Sunday"/>
-              </label>
-              <label htmlFor="place" className="mx-2">
-                <input type="Text" placeholder="Closed" />
-              </label>
+            <label htmlFor="place" className="mx-2">
+              <input type="text" placeholder="day" value="Sunday" />
+            </label>
+            <label htmlFor="place" className="mx-2">
+              <input type="Text" placeholder="Closed" />
+            </label>
           </div>
         </div>
+        <div className="formfield">
+          <h4>FAQs </h4>
+          <div className="fields my-4">
+            <label htmlFor="place" className="my-2">
+              <h6>Questions</h6>
+              <input type="text" placeholder="Question" />
+            </label>
+            <label htmlFor="place" className="my-2">
+              <h6>Answer</h6>
+              <textarea rows="2" cols="" placeholder="Answer"></textarea>
+            </label>
+          </div>
+        </div>
+        <button className="submitbtn my-4">Submit</button>
       </div>
       <Footer />
     </div>
