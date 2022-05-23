@@ -5,7 +5,7 @@ export const getComments = async () => {
       body: "First comment",
       username: "Jack",
       userId: "1",
-      parentId: null,
+      parentCommentId: null,
       createdAt: "2021-08-16T23:00:33.010+02:00",
     },
     {
@@ -13,7 +13,7 @@ export const getComments = async () => {
       body: "Second comment",
       username: "John",
       userId: "2",
-      parentId: null,
+      parentCommentId: null,
       createdAt: "2021-08-16T23:00:33.010+02:00",
     },
     {
@@ -21,7 +21,7 @@ export const getComments = async () => {
       body: "First comment first child",
       username: "John",
       userId: "2",
-      parentId: "1",
+      parentCommentId: "1",
       createdAt: "2021-08-16T23:00:33.010+02:00",
     },
     {
@@ -29,17 +29,17 @@ export const getComments = async () => {
       body: "Second comment second child",
       username: "John",
       userId: "2",
-      parentId: "2",
+      parentCommentId: "2",
       createdAt: "2021-08-16T23:00:33.010+02:00",
     },
   ];
 };
 
-export const createComment = async (text, parentId = null) => {
+export const createComment = async (text, parentCommentId = null) => {
   return {
     id: Math.random().toString(36).substr(2, 9),
     body: text,
-    parentId,
+    parentCommentId,
     userId: "1",
     username: "John",
     createdAt: new Date().toISOString(),

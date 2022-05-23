@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
@@ -48,48 +48,173 @@ function AddPlaces() {
       title: "cocktails",
     },
   ];
+
+  const [formData, setFormData] = useState({
+    placeName: "",
+    price: "",
+    stayTime: "",
+    description: "",
+    address: "",
+    email: "",
+    phone1: "",
+    phone2: "",
+    website: "",
+    facebookURL: "",
+    instagramURL: "",
+    twitterURL: "",
+  });
+
+  const dataChangeHandler = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    e.preventDefault();
+    // console.log(formData);
+  };
+  // console.log(formData.contact.address);
+
+  const submitPlaces = () => {
+    const data = {
+      placeName: formData.placeName,
+      price: formData.price,
+      stayTime: formData.stayTime,
+      description: formData.description,
+      contact: {
+        address: formData.address,
+        email: formData.email,
+        phone1: formData.phone1,
+        phone2: formData.phone1,
+        website: formData.website,
+        facebookURL: formData.facebookURL,
+        instagramURL: formData.instagramURL,
+        twitterURL: formData.twitterURL,
+      },
+    };
+
+    async function postData(url = "", data = {}) {
+      console.log(data);
+      const response = await fetch(url, {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(data),
+      });
+      return response.json();
+    }
+
+    postData(
+      "https://fatoentrepreneur.herokuapp.com/places/add",
+      data
+    ).then((res) => {
+      console.log("Response Message", res);
+    });
+  };
+
   return (
     <div className=" addplaces m-0 p-0">
       <div className=" container">
-        <h3 className="py-4 addPlaceHeading">
+        {/* <div className="navigate d-flex flex-wrap justify-content-start">
+        <h4 className="py-4 addPlaceHeading mx-4">
           {" "}
           <span className="chgedcolor">Add</span> new place
-        </h3>
+        </h4>
+        <h4 className="py-4 addPlaceHeading mx-4">
+          {" "}
+          <span className="chgedcolor">Add</span> new place
+        </h4>
+        </div> */}
         <div className="formfield">
           <h4>General </h4>
           <div className="fields my-4">
             <label htmlFor="place">
               <h6>Place Name*</h6>
-              <input type="text" placeholder="What's the name of the place" />
+              <input
+                type="text"
+                placeholder="What's the name of the place"
+                onChange={dataChangeHandler}
+                name="placeName"
+              />
             </label>
           </div>
           <div className="fields d-flex  my-4">
             <div className="col-4 px-2">
               <label htmlFor="place">
                 <h6>Price*</h6>
-                <input type="number" placeholder="Only Numbers" />
+                <input
+                  type="number"
+                  placeholder="Only Numbers"
+                  onChange={dataChangeHandler}
+                  name="price"
+                />
               </label>
             </div>
             <div className="col-4 px-2">
               <label htmlFor="place">
                 <h6>Time</h6>
-                <input type="Text" placeholder="Hours/Days/Month" />
+                <input
+                  type="Text"
+                  placeholder="Hours/Days/Month"
+                  onChange={dataChangeHandler}
+                  name="stayTime"
+                />
               </label>
             </div>
           </div>
           <div className="fields my-4">
-            <h6 className="editor my-4">Description</h6>
-            <Editor className="editor my-4 py-4" />
+            {/* <h6 className="editor my-4">Description</h6> */}
+            {/* <Editor className="editor my-4 py-4" /> */}
+            <label htmlFor="place">
+              <h6>Description</h6>
+              <textarea
+                rows="5"
+                cols=""
+                placeholder="Item description"
+                onChange={dataChangeHandler}
+                name="placeDescription"
+              ></textarea>
+            </label>
           </div>
           <div className="fields my-4">
             <label htmlFor="place">
               <h6>Category*</h6>
               <select placeholder="select Category">
                 <option value="">Select Category</option>
-                <option value="Food and Drink">Food and Drink</option>
-                <option value="Food and Drink">See & do</option>
-                <option value="Food and Drink">Shopping</option>
-                <option value="Food and Drink">Stay</option>
+                <option
+                  value="Food and Drink"
+                  onChange={dataChangeHandler}
+                  name="category"
+                >
+                  Food and Drink
+                </option>
+                <option
+                  value="See & Do"
+                  onChange={dataChangeHandler}
+                  name="category"
+                >
+                  See & do
+                </option>
+                <option
+                  value="Shopping"
+                  onChange={dataChangeHandler}
+                  name="category"
+                >
+                  Shopping
+                </option>
+                <option
+                  value="Stay"
+                  onChange={dataChangeHandler}
+                  name="category"
+                >
+                  Stay
+                </option>
               </select>
             </label>
           </div>
@@ -139,7 +264,7 @@ function AddPlaces() {
             </label>
           </div>
         </div>
-        <div className="formfield">
+        {/* <div className="formfield">
           <h4>Menu </h4>
           <div className="fields d-flex  my-4">
             <div className="col-4 px-2">
@@ -162,12 +287,6 @@ function AddPlaces() {
                 <option value="Food and Drink">Main Course</option>
               </select>
             </label>
-            <h6>Description</h6>
-            <textarea
-              rows="5"
-              cols=""
-              placeholder="Item description"
-            ></textarea>
           </div>
           <div className="fields my-4">
             <label htmlFor="place">
@@ -185,10 +304,10 @@ function AddPlaces() {
               <input type="file" placeholder="Only Numbers" />
             </label>
           </div>
-        </div>
+        </div> */}
         <div className="formfield">
           <h4>Location </h4>
-          <div className="fields d-flex  my-4">
+          {/* <div className="fields d-flex  my-4">
             <label htmlFor="place" className="mx-2">
               <h6>City/Town*</h6>
               <select placeholder="select Category">
@@ -212,11 +331,16 @@ function AddPlaces() {
                 <option value="time1">time3</option>
               </select>
             </label>
-          </div>
+          </div> */}
           <div className="fields my-4">
             <label htmlFor="place">
               <h6>Place Address*</h6>
-              <input type="text" placeholder="Full address" />
+              <input
+                type="text"
+                placeholder="Full address"
+                onChange={dataChangeHandler}
+                name="address"
+              />
             </label>
           </div>
         </div>
@@ -225,19 +349,39 @@ function AddPlaces() {
           <div className="fields my-4">
             <label htmlFor="place" className="my-2">
               <h6>Email</h6>
-              <input type="email" placeholder="Your email address" />
+              <input
+                type="email"
+                placeholder="Your email address"
+                onChange={dataChangeHandler}
+                name="email"
+              />
             </label>
             <label htmlFor="place" className="my-2">
               <h6>Phone Number 1(Optional)</h6>
-              <input type="text" placeholder="Your phone 1 number" />
+              <input
+                type="text"
+                placeholder="Your phone 1 number"
+                onChange={dataChangeHandler}
+                name="phone1"
+              />
             </label>
             <label htmlFor="place" className="my-2">
               <h6>Phone Number 2(Optional)</h6>
-              <input type="text" placeholder="Your phone 2 number" />
+              <input
+                type="text"
+                placeholder="Your phone 2 number"
+                onChange={dataChangeHandler}
+                name="phone2"
+              />
             </label>
             <label htmlFor="place" className="my-2">
               <h6>Website (Optional)</h6>
-              <input type="text" placeholder="Your website url" />
+              <input
+                type="text"
+                placeholder="Your website url"
+                onChange={dataChangeHandler}
+                name="website"
+              />
             </label>
           </div>
         </div>
@@ -246,19 +390,34 @@ function AddPlaces() {
           <div className="fields my-4">
             <label htmlFor="place" className="my-2">
               <h6>Facebook</h6>
-              <input type="text" placeholder="Facebook url" />
+              <input
+                type="text"
+                placeholder="Facebook url"
+                onChange={dataChangeHandler}
+                name="facebookURL"
+              />
             </label>
             <label htmlFor="place" className="my-2">
               <h6>Instagram</h6>
-              <input type="text" placeholder="Instagram url" />
+              <input
+                type="text"
+                placeholder="Instagram url"
+                onChange={dataChangeHandler}
+                name="instagramURL"
+              />
             </label>
             <label htmlFor="place" className="my-2">
               <h6>Twitter</h6>
-              <input type="text" placeholder="Twitter url" />
+              <input
+                type="text"
+                placeholder="Twitter url"
+                onChange={dataChangeHandler}
+                name="twitterURL"
+              />
             </label>
           </div>
         </div>
-        <div className="formfield">
+        {/* <div className="formfield">
           <h4> Opening Hours </h4>
           <div className="fields d-flex  my-4">
             <label htmlFor="place" className="mx-2">
@@ -334,8 +493,8 @@ function AddPlaces() {
               <input type="Text" placeholder="Closed" />
             </label>
           </div>
-        </div>
-        <div className="formfield">
+        </div> */}
+        {/* <div className="formfield">
           <h4>FAQs </h4>
           <div className="fields my-4">
             <label htmlFor="place" className="my-2">
@@ -347,10 +506,11 @@ function AddPlaces() {
               <textarea rows="2" cols="" placeholder="Answer"></textarea>
             </label>
           </div>
-        </div>
-        <button className="submitbtn my-4">Submit</button>
+        </div> */}
+        <button className="submitbtn my-4" onClick={submitPlaces}>
+          Submit
+        </button>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -9,18 +9,21 @@ export default function Posts() {
   const [storydata, setStoryData] = useState([]);
   const [loading, setLoading] = useState(null);
 
+  const storyClickHandler=(e)=>{
+    location.push(`story/${e.title}/${e._id}`)
+  }
   useEffect(() => {
     setLoading(true);
     fetch(`https://fatoentrepreneur.herokuapp.com/stories`)
       .then((res) => res.json())
       .then((json) => {
         setStoryData(json.result);
-        console.log(json.result);
-        console.log(json.result[0].category);
+        // console.log(json.result);
+        // console.log(json.result[0].category);
         setLoading(false);
       });
   }, []);
-  console.log(storydata);
+  // console.log(storydata);
 
   const content = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
   officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
@@ -40,6 +43,7 @@ export default function Posts() {
                 topic={story.title}
                 timeposted="1"
                 content={story.description}
+                click={()=>storyClickHandler(story)}
               />
             );
           })}

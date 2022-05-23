@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./Login.css";
 
 function LoginPage() {
@@ -16,34 +18,108 @@ function LoginPage() {
     container2.classList.remove("right-panel-active");
   }
 
+  const [signUpData, setSignUpData] = useState({
+    airline: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+    email: "",
+  });
+  const dataChangeHandler = (e) => {
+    const { name, value } = e.target;
+    setSignUpData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    e.preventDefault();
+    console.log(signUpData);
+  };
+
   const submitSignUp = () => {
     const data = {
-      firstname: "hello",
-      secondName: "world",
-      email: "abc@gmsil.com",
-      airLine: "xyz",
+      airline: signUpData.airline,
+      firstName: signUpData.firstName,
+      lastName: "",
+      password: signUpData.password,
+      email: signUpData.email,
     };
-    fetch("https://fatoentrepreneur.herokuapp.com/users/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-	.then(res=>{
-		console.log('response',res)
-		if(res.status===200){
-			alert('Success')
-		}
-	})
-	;
+
+    async function postData(url = "", data = {}) {
+      console.log(data);
+      const response = await fetch(url, {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(data),
+      });
+      return response.json();
+    }
+
+    postData(
+      "https://fatoentrepreneur.herokuapp.com/users/register",
+      data
+    ).then((res) => {
+      console.log("Response Message", res);
+    });
+  };
+
+
+  const [signInData, setSignInData] = useState({
+    logPassword: "",
+    logEmail: "",
+  });
+
+  const LoginDataChangeHandler = (e) => {
+    const { name, value } = e.target;
+    setSignInData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    e.preventDefault();
+  };
+
+  const submitSignIn = () => {
+    const data = {
+      password: signInData.password,
+      email: signInData.email,
+    };
+
+    async function postData(url = "", data = {}) {
+      console.log(data);
+      const response = await fetch(url, {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(data),
+      });
+      return response.json();
+    }
+
+    postData(
+      "https://fatoentrepreneur.herokuapp.com/users/login",
+      data
+    ).then((res) => {
+      console.log("Response Message", res);
+    });
   };
 
   return (
     <div className="body">
       <div className="container1" id="container1" ref={ref}>
         <div className="form-container1 sign-up-container1">
-          <form action="#">
+          <form action="/verification">
             <h1 className="loginheading">Create Account</h1>
             <div className="social-container1">
               <a href="#" className="social">
@@ -57,21 +133,45 @@ function LoginPage() {
               </a>
             </div>
             <span>or use your email for registration</span>
-            <input className="loginInput" type="text" placeholder="Name" />
-            <input className="loginInput" type="text" placeholder="AirLines" />
-            <input className="loginInput" type="email" placeholder="Email" />
+            <input
+              className="loginInput"
+              type="text"
+              placeholder="Name"
+              onChange={dataChangeHandler}
+              name="firstName"
+              required
+            />
+            <input
+              className="loginInput"
+              type="text"
+              placeholder="AirLines"
+              onChange={dataChangeHandler}
+              name="airline"
+              required
+            />
+            <input
+              className="loginInput"
+              type="email"
+              placeholder="Email"
+              onChange={dataChangeHandler}
+              name="email"
+              required
+            />
             <input
               className="loginInput"
               type="password"
               placeholder="Password"
+              onChange={dataChangeHandler}
+              name="password"
+              required
             />
-            <button className="button" onClick={submitSignUp}>
-              Sign Up
-            </button>
+              <button className="button" onClick={submitSignUp}>
+                Sign Up
+              </button>
           </form>
         </div>
         <div className="form-container1 sign-in-container1">
-          <form className="loginForm" action="#">
+          <form className="loginForm" action="/dashBoard">
             <h1>Sign in</h1>
             <div className="social-container1">
               <a href="#" className="social">
@@ -85,14 +185,15 @@ function LoginPage() {
               </a>
             </div>
             <span>or use your account</span>
-            <input className="loginInput" type="email" placeholder="Email" />
+            <input className="loginInput" type="email" placeholder="Email"  name="logEmail" />
             <input
               className="loginInput"
               type="password"
               placeholder="Password"
+              name="logPassword"
             />
             <a href="#">Forgot your password?</a>
-            <button className="button">Sign In</button>
+            <button className="button" onClick={submitSignIn} >Sign In</button>
           </form>
         </div>
         <div className="overlay-container1">

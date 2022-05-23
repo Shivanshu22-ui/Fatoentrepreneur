@@ -14,6 +14,8 @@ import SingleStory from "./Stories/SingleStory/SingleStory";
 import UserDashBoard from "./DashBoard/UserDashBoard";
 import Login from "./LoginSignup/LoginPage";
 import AddPlaces from "./AddPlaces/AddPlaces";
+import VerifyOTP from "./LoginSignup/VerifyOTP";
+import AddInfo from "./AddPlaces/AddInfo";
 
 
 
@@ -32,10 +34,16 @@ function App() {
             <PlacesInfo />
           </Route>
           <Route exact path="/AddPlaces">
-            <AddPlaces/>
+            <AddInfo/>
+          </Route>
+          <Route exact path="/dashBoard">
+          <UserDashBoard/>
           </Route>
           <Route exact path="/Stories">
             <Stories />
+          </Route>
+          <Route exact path="/story/:storyheading/:storyID">
+           <SingleStory/>
           </Route>
           <Route exact path="/AboutUs">
             <About />
@@ -43,8 +51,10 @@ function App() {
           <Route exact path="/Login">
             <LoginPage/>
           </Route>
+          <Route exact path="/verification">
+            <VerifyOTP/>
+          </Route>
           <Route exact path="/ContactUs">
-            {/* <SingleStory/> */}
             <Contact />
           </Route>
           <Route exact path="/place/:placeName/:placeID">

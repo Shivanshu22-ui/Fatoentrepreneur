@@ -7,8 +7,8 @@ import PlaceDetailsReviews from "./PlaceDetailsReviews";
 import { NavLink, Link } from "react-router-dom";
 import Comments from "../../../assets/Components/comments/Comments";
 
-function PlaceDetailsContent({ place }) {
-  // console.log(place);
+function PlaceDetailsContent({ place , comments }) {
+  // console.log(comments);
   return (
     <div className="container placeDetailsContent">
       <nav className="miniNav">
@@ -141,7 +141,8 @@ function PlaceDetailsContent({ place }) {
       </div>
       <div className="placeReviews">
         {/* <PlaceDetailsReviews /> */}
-        <Comments   currentUserId="1"/>
+        <Comments   currentUserId="1" comment={comments}/>
+        
         <p style={{ fontSize: "14px", fontWeight: "600", color: "#474545" }}>
           {" "}
           <span style={{ color: "#23d3d3" }}>Login</span> to review

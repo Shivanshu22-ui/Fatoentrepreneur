@@ -74,15 +74,6 @@ function Places() {
     },
   ];
 
-  // const getData = () => {
-  //     fetch("https://fatoentrepreneur.herokuapp.com/places")
-  //       .then((res) => res.json())
-  //       .then((json) => {
-  //         placesData=json.result
-  //         console.log(placesData)
-  //     })
-  // }
-  // getData();
   const [placeData, setPlaceData] = useState([]);
   const [loading, setLoading] = useState(null);
 
@@ -96,10 +87,13 @@ function Places() {
       });
   }, []);
 
-  const clickHandler = (name) => {
-    location.push(`place/${name}`);
+  const clickHandler = (place) => {
+    location.push(`/place/${place.category}/${place._id}`)
+    // location.push(`place/${name}`);
   };
-
+  const placeClickHandler = (place) => {
+    location.push(`/place/${place.category}/${place._id}`)
+  }
   return (
     <>
     <div className="places">
@@ -114,7 +108,7 @@ function Places() {
           return (
            
             <PlacesCards
-              clickHandler={() => clickHandler(places.place)}
+              clickHandler={() => clickHandler(places)}
               place={places.city.city}
               image={places.city.images[0]}
               type={places.subCategory}
@@ -146,7 +140,7 @@ function Places() {
         { loading?'Loading':placeData.map((places, index) => {
           return (
             <PlacesCards
-              clickHandler={() => clickHandler(places.place)}
+              clickHandler={() => clickHandler(places)}
               place={places.city.city}
               image={places.city.images[0]}
               type={places.subCategory}

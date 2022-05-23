@@ -10,7 +10,7 @@ export default function Post(props) {
      SecondElement=SecondElement+elements[i]+" ";
   }
   return (
-    <div className="post">
+    <div className="post" onClick={props.click}>
       <img
         className="postImg"
         src={props.img}

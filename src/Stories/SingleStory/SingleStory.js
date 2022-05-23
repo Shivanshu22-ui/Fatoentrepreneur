@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState ,useEffect} from "react";
+import { NavLink, Link, useParams ,useHistory} from "react-router-dom";
 import "./SingleStory.css";
 // import ReactBootstrapCarousel from "react-bootstrap-carousel";
 // import "bootstrap/dist/css/bootstrap.css";
@@ -13,7 +14,33 @@ function SingleStory() {
   officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
   fugiat, reprehenderit praesentium blanditiis quos cupiditate ratione
   atque, exercitationem quibusdam, reiciendis odio laboriosam?`;
+
+  let {storyID} = useParams();
+  const [storyData , setStoryData]=useState([]);
+  const [loading , setLoading]=useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(`https://fatoentrepreneur.herokuapp.com/stories/${storyID}`)
+      .then((res) => res.json())
+      .then((json) => {
+        setStoryData(json.story)
+        // console.log(json.story)
+        setLoading(false);
+    })
+  },[])
+
+
+  // const heading =storyData.title;
+  // const elements =heading.split(" ");
+  // const firstElement = elements[0]+" ";
+  // let SecondElement="";
+  // for (let i = 1; i < elements.length; i++) {
+  //    SecondElement=SecondElement+elements[i]+" ";
+  // }
+
   return (
+    loading?'loading':
     <div>
       <div className="singlestoryhead container-fluid my-2">
         <img
@@ -28,15 +55,14 @@ function SingleStory() {
               <span className="postTitle">
                 <h2 className="text-center">
                   {" "}
-                  <span className="chgedcolor"> Lorem</span> ipsum dolor sit
-                  amet
+                  {/* <span className="chgedcolor"> {firstElement}</span> {SecondElement} */}
+                  {storyData.title}
                 </h2>
               </span>
             </div>
             <div className="stroyContent text-start px-4 my-4" >
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa rem ad, quia veritatis doloremque, quasi, deleniti ratione velit ipsam ab laudantium! Saepe in expedita cum quas dignissimos, ratione adipisci sed esse a, laborum, quos aspernatur quasi officiis dicta error inventore blanditiis minus accusantium. Quaerat deleniti porro minima. Possimus enim, id voluptatibus molestiae quas consequuntur autem saepe mollitia dolor. Reprehenderit adipisci consequuntur voluptatem unde harum labore impedit voluptate neque cupiditate soluta. Eos voluptatibus eaque reprehenderit. Magnam alias eaque dignissimos omnis beatae officia recusandae blanditiis vel ipsa cum praesentium veniam saepe nesciunt ad autem culpa, reprehenderit nihil ratione ea tenetur impedit incidunt iusto! Esse rerum explicabo aspernatur enim iure sed maiores, unde nesciunt voluptates soluta nam! Tempora dolores quas odio placeat totam reiciendis, a minima velit rerum doloremque optio facere enim repellat exercitationem voluptate delectus qui expedita perferendis quasi saepe animi ad, voluptates deserunt perspiciatis? Enim soluta ipsa quis tempora in!</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa rem ad, quia veritatis doloremque, quasi, deleniti ratione velit ipsam ab laudantium! Saepe in expedita cum quas dignissimos, ratione adipisci sed esse a, laborum, quos aspernatur quasi officiis dicta error inventore blanditiis minus accusantium. Quaerat deleniti porro minima. Possimus enim, id voluptatibus molestiae quas consequuntur autem saepe mollitia dolor. Reprehenderit adipisci consequuntur voluptatem unde harum labore impedit voluptate neque cupiditate soluta. Eos voluptatibus eaque reprehenderit. Magnam alias eaque dignissimos omnis beatae officia recusandae blanditiis vel ipsa cum praesentium veniam saepe nesciunt ad autem culpa, reprehenderit nihil ratione ea tenetur impedit incidunt iusto! Esse rerum explicabo aspernatur enim iure sed maiores, unde nesciunt voluptates soluta nam! Tempora dolores quas odio placeat totam reiciendis, a minima velit rerum doloremque optio facere enim repellat exercitationem voluptate delectus qui expedita perferendis quasi saepe animi ad, voluptates deserunt perspiciatis? Enim soluta ipsa quis tempora in!</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa rem ad, quia veritatis doloremque, quasi, deleniti ratione velit ipsam ab laudantium! Saepe in expedita cum quas dignissimos, ratione adipisci sed esse a, laborum, quos aspernatur quasi officiis dicta error inventore blanditiis minus accusantium. Quaerat deleniti porro minima. Possimus enim, id voluptatibus molestiae quas consequuntur autem saepe mollitia dolor. Reprehenderit adipisci consequuntur voluptatem unde harum labore impedit voluptate neque cupiditate soluta. Eos voluptatibus eaque reprehenderit. Magnam alias eaque dignissimos omnis beatae officia recusandae blanditiis vel ipsa cum praesentium veniam saepe nesciunt ad autem culpa, reprehenderit nihil ratione ea tenetur impedit incidunt iusto! Esse rerum explicabo aspernatur enim iure sed maiores, unde nesciunt voluptates soluta nam! Tempora dolores quas odio placeat totam reiciendis, a minima velit rerum doloremque optio facere enim repellat exercitationem voluptate delectus qui expedita perferendis quasi saepe animi ad, voluptates deserunt perspiciatis? Enim soluta ipsa quis tempora in!</p>
+                <p>{storyData.description}</p>
+          
             </div>
           </div>
           <div className="col-4">

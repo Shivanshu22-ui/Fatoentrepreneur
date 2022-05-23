@@ -52,7 +52,7 @@ function PlacesInfo({match}) {
         <PlacesInfoHero city={cityData}/>
       </div>
       <PlaceContentMain city={cityData}/>
-      <PlaceInfoNav />
+      <PlaceInfoNav city={cityData}/>
       
        <div className="placesCards d-flex flex-wrap justify-content-start align-items-center">
         

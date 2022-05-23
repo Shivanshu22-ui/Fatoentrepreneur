@@ -12,6 +12,7 @@ function PlaceDetails() {
 
   const [loading,setLoading] = useState(true);
   const [placeData,setPlaceData] = useState(null);
+  const [placeComments,setPlaceComments]=useState(null)
 
   useEffect(() => {
     setLoading(true);
@@ -22,7 +23,14 @@ function PlaceDetails() {
         setPlaceData(json.place)
         setLoading(false);
     })
+    fetch(`https://fatoentrepreneur.herokuapp.com/comments/places?id=${placeID}`)
+      .then((res) => res.json())
+      .then((json) => {
+        // console.log(json.result)
+       setPlaceComments(json.result)
+    })
   },[])
+  
   const placesData = [
     {
       place: "London",
@@ -96,7 +104,7 @@ function PlaceDetails() {
         <div className="container">
           <div className="row">
             <div className="col-7">
-              <PlaceDetailsContent place={placeData}/>
+              <PlaceDetailsContent place={placeData} comments={placeComments}/>
             </div>
           </div>
           
