@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+
 import "./addInfo.css";
 import AddPlaces from "./AddPlaces";
 import AddStory from "./AddStory";
+import Footer from "../assets/Components/Footer/Footer";
 
 function AddInfo() {
   const [addPlace, setAddPlace] = useState(true);
   const [placeCat, setPlaceCat] = useState("addPlace");
-  const isActive = document.getElementsByClassName("placeActive");
 
   const onNavigate = () => {
     if (placeCat == "addPlace") {
@@ -17,6 +18,7 @@ function AddInfo() {
       setAddPlace(true);
     }
   };
+
   return (
     <div>
       <div className="container">
@@ -44,6 +46,7 @@ function AddInfo() {
         </div>
       </div>
       {addPlace ? <AddPlaces /> : <AddStory />}
+      <Footer/>
     </div>
   );
 }

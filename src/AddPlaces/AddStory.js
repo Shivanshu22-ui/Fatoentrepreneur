@@ -15,6 +15,7 @@ function AddStory() {
     facebookURL: "",
     instagramURL: "",
     twitterURL: "",
+    file:[]
   });
 
   const dataChangeHandler = (e) => {
@@ -26,6 +27,12 @@ function AddStory() {
     e.preventDefault();
     console.log(formData);
   };
+  const fileUpload=(e)=>{
+    // let form = new FormData();
+    // form.append('file',e.target.files[0]);
+    // console.log(form.file);
+    console.log(e.target.files[0])
+  }
 
   const submitStory=()=>{
     const data={
@@ -133,7 +140,7 @@ function AddStory() {
           <div className="col-4 px-2">
             <label htmlFor="place">
               <h6>Image</h6>
-              <input type="file" placeholder="Only Numbers" />
+              <input type="file" multiple name='files' onChange={fileUpload}/>
             </label>
           </div>
         </div>

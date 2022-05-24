@@ -185,12 +185,13 @@ function LoginPage() {
               </a>
             </div>
             <span>or use your account</span>
-            <input className="loginInput" type="email" placeholder="Email"  name="logEmail" />
+            <input className="loginInput" type="email" placeholder="Email" required name="logEmail" />
             <input
               className="loginInput"
               type="password"
               placeholder="Password"
               name="logPassword"
+              required
             />
             <a href="#">Forgot your password?</a>
             <button className="button" onClick={submitSignIn} >Sign In</button>

@@ -71,9 +71,16 @@ function AddPlaces() {
       [name]: value,
     }));
     e.preventDefault();
-    // console.log(formData);
   };
-  // console.log(formData.contact.address);
+  const [checked,setChecked]=useState(true)
+  const onCheck=()=>{
+    setChecked(!checked);
+    if(checked){
+     console.log("checked")
+     } else{
+     console.log('not checked')
+     }
+  }
 
   const submitPlaces = () => {
     const data = {
@@ -189,28 +196,28 @@ function AddPlaces() {
                 <option value="">Select Category</option>
                 <option
                   value="Food and Drink"
-                  onChange={dataChangeHandler}
+                  onClick={onCheck}
                   name="category"
                 >
                   Food and Drink
                 </option>
                 <option
                   value="See & Do"
-                  onChange={dataChangeHandler}
+                  onClick={onCheck}
                   name="category"
                 >
                   See & do
                 </option>
                 <option
                   value="Shopping"
-                  onChange={dataChangeHandler}
+                  onClick={onCheck}
                   name="category"
                 >
                   Shopping
                 </option>
                 <option
                   value="Stay"
-                  onChange={dataChangeHandler}
+                  onClick={onCheck}
                   name="category"
                 >
                   Stay
@@ -255,6 +262,7 @@ function AddPlaces() {
                         id={data.id}
                         value={data.value}
                         className="my-2 inputval"
+                        onChange={onCheck}
                       />
                       <label for={data.id}>{data.title}</label>
                     </div>
