@@ -64,3 +64,24 @@
 .placeContent{
     margin: 55px 0;
 }
+
+@media (max-width:776px) {
+    .placesInfoHero .placeTitle h3{
+        color: #0077b6;
+        font-size: 2.3rem;
+        text-align: center;
+    }
+    .placesInfoHero .placeTitle p{
+        text-align: center;
+    }
+    .placesInfoHero .placeSubtitle p{
+        text-align: center;
+    }
+    .carousel-main{
+        display: none;
+    }
+    .placesInfoHero .placeSubtitle p span i{
+        display: none;
+        
+    }
+}

@@ -104,7 +104,7 @@ function PlaceDetails() {
         </Carousel>
         <div className="container">
           <div className="row">
-            <div className="col-7">
+            <div className="col-md-7 col-sm-12">
               <PlaceDetailsContent place={placeData} comments={placeComments}/>
             </div>
           </div>

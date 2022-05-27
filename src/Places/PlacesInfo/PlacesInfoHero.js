@@ -1,11 +1,13 @@
 import React from "react";
 // import { Carousel } from 'react-carousel-minimal';
-import "./PlacesInfoHero.css"
+import "./PlacesInfoHero.css";
 import { Carousel } from "3d-react-carousal";
 
 function PlacesInfoHero(props) {
-  const imageData = props.city.images.map((item,index) => (<img src={item} alt={index} />));
-  
+  const imageData = props.city.images.map((item, index) => (
+    <img src={item} alt={index} />
+  ));
+
   return (
     <div className="container">
       <div className="row placesInfoHero d-flex justify-content-center flex-wrap justify-content-sm-center">
@@ -15,30 +17,51 @@ function PlacesInfoHero(props) {
             <p>{props.city.country}</p>
           </div>
           <div className="placeSubtitle">
-            <p> <span><i class="fa-solid fa-location-dot  px-2 "></i></span>{props.city.caption}</p>
+            <p>
+              {" "}
+              <span>
+                <i class="fa-solid fa-location-dot  px-2 "></i>
+              </span>
+              {props.city.caption}
+            </p>
           </div>
           <div className="placeContent ">
-              <ul className="d-flex justify-content-between p-3 my-2">
-                <li className="mx-2">
-                  <div>
-                    <p className="text-center"><span className="px-2"><i class="fa-solid fa-sack-dollar"></i></span> <i>{props.city.currency}</i> </p>
-                    <h3 className="chgedcolor mt-2"> CURRENCY</h3>
-                  </div>
-                </li>
-                <li className="mx-2">
-                  <div>
-                    <p className="text-center"><span className="px-2"><i class="fa-solid fa-language"></i></span> <i>{props.city.language}</i> </p>
-                    <h3 className="chgedcolor mt-2"> LANGUAGE</h3>
-                  </div>
-                </li>
-                <li className="mx-2 bline">
-                  <div>
-                    <p className="text-center"> <span className="px-2"><i class="fa-solid fa-calendar-days"></i></span><i>{props.city.bestTime}</i> </p>
-                    <h3 className="chgedcolor mt-2"> BEST TIME TO VISIT
-</h3>
-                  </div>
-                </li>
-              </ul>
+            <ul className="d-flex justify-content-between p-3 my-2">
+              <li className="mx-2">
+                <div>
+                  <p className="text-center">
+                    <span className="px-2">
+                      <i class="fa-solid fa-sack-dollar"></i>
+                    </span>{" "}
+                    <i>{props.city.currency}</i>{" "}
+                  </p>
+                  <h3 className="chgedcolor mt-2"> CURRENCY</h3>
+                </div>
+              </li>
+              <li className="mx-2">
+                <div>
+                  <p className="text-center">
+                    <span className="px-2">
+                      <i class="fa-solid fa-language"></i>
+                    </span>{" "}
+                    <i>{props.city.language}</i>{" "}
+                  </p>
+                  <h3 className="chgedcolor mt-2"> LANGUAGE</h3>
+                </div>
+              </li>
+              <li className="mx-2 bline">
+                <div>
+                  <p className="text-center">
+                    {" "}
+                    <span className="px-2">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <i>{props.city.bestTime}</i>{" "}
+                  </p>
+                  <h3 className="chgedcolor mt-2"> BEST TIME TO VISIT</h3>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
         <div className="col-md-7 col-sm-12 carousel-main">
@@ -51,7 +74,6 @@ function PlacesInfoHero(props) {
           />
         </div>
       </div>
-      
     </div>
   );
 }
