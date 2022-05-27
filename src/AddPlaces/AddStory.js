@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./AddPlaces.css";
 
 function AddStory() {
-  const [formData,setFormData]=useState({
-    storyName:'',
-    city:'',
-    country:'',
-    description:'', 
+  const [formData, setFormData] = useState({
+    storyName: "",
+    city: "",
+    country: "",
+    description: "",
     address: "",
     email: "",
     phone1: "",
@@ -15,31 +15,49 @@ function AddStory() {
     facebookURL: "",
     instagramURL: "",
     twitterURL: "",
-    file:[]
+    file: [],
   });
-
+  const [category, setCategory] = useState("");
   const dataChangeHandler = (e) => {
+    e.preventDefault();
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    e.preventDefault();
-    console.log(formData);
   };
-  const fileUpload=(e)=>{
-    // let form = new FormData();
-    // form.append('file',e.target.files[0]);
-    // console.log(form.file);
-    console.log(e.target.files[0])
-  }
 
-  const submitStory=()=>{
-    const data={
+
+  const image = [];
+  const [picked, setPicked] = useState();
+  const fileUpload = (e) => {
+    e.preventDefault();
+
+    console.log(e.target.files);
+    const [f]=e.target.files;
+    setPicked(f)
+      // image.push(e.target.files);
+    // if (!picked) {
+    //   setPicked(true);
+    // } else {
+    //   while (image.length != 0) {
+    //     image.pop();
+    //   }
+    //   setPicked(false);
+    // }
+  };
+// console.log(picked,category)
+
+
+  const submitStory = (e) => {
+    e.preventDefault();
+    const data = {
       title: formData.storyName,
       city: formData.city,
       country: formData.country,
       description: formData.description,
+      subCategory: category,
+      images: picked,
       contact: {
         address: formData.address,
         email: formData.email,
@@ -49,33 +67,32 @@ function AddStory() {
         facebookURL: formData.facebookURL,
         instagramURL: formData.instagramURL,
         twitterURL: formData.twitterURL,
-    }
-  };
-
-  async function postData(url = "", data = {}) {
-    console.log(data);
-    const response = await fetch(url, {
-      method: "POST",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
       },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify(data),
-    });
-    return response.json();
-  }
+    };
+console.log(data)
+    async function postData(url = "", data = {}) {
+      console.log(data);
+      const response = await fetch(url, {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(data),
+      });
+      return response.json();
+    }
 
-  postData(
-    "https://fatoentrepreneur.herokuapp.com/stories/add",
-    data
-  ).then((res) => {
-    console.log("Response Message", res);
-  });
-  }
+    postData("https://fatoentrepreneur.herokuapp.com/stories/add", data).then(
+      (res) => {
+        console.log("Response Message", res);
+      }
+    );
+  };
   return (
     <div className=" addplaces m-0 p-0">
       <div className=" container">
@@ -95,18 +112,31 @@ function AddStory() {
             <div className="col-4 px-2">
               <label htmlFor="place">
                 <h6>City</h6>
-                <input type="text" placeholder="City" name="city"  onChange={dataChangeHandler}/>
+                <input
+                  type="text"
+                  placeholder="City"
+                  name="city"
+                  onChange={dataChangeHandler}
+                />
               </label>
             </div>
             <div className="col-4 px-2">
               <label htmlFor="place">
                 <h6>Country</h6>
-                <input type="Text" placeholder="Country" name="country" onChange={dataChangeHandler}/>
+                <input
+                  type="Text"
+                  placeholder="Country"
+                  name="country"
+                  onChange={dataChangeHandler}
+                />
               </label>
             </div>
             <label htmlFor="place">
               <h6>Category</h6>
-              <select placeholder="select Category">
+              <select
+                placeholder="select Category"
+                onChange={(e) => setCategory(e.target.value)}
+              >
                 <option value="">Select type</option>
                 <option value="Activity">Activity</option>
                 <option value="Apartment">Apartment</option>
@@ -139,8 +169,16 @@ function AddStory() {
           </div>
           <div className="col-4 px-2">
             <label htmlFor="place">
-              <h6>Image</h6>
-              <input type="file" multiple name='files' onChange={fileUpload}/>
+              <h6>
+                Image <span>(Your can select multiple files**)</span>
+              </h6>
+              <input
+                type="file"
+                multiple
+                name="files"
+                placeholder="select multiple files"
+                onChange={fileUpload}
+              />
             </label>
           </div>
         </div>
@@ -157,8 +195,8 @@ function AddStory() {
               />
             </label>
           </div>
-          </div>
-          <div className="formfield">
+        </div>
+        <div className="formfield">
           <h4>Contact Info </h4>
           <div className="fields my-4">
             <label htmlFor="place" className="my-2">
@@ -231,9 +269,7 @@ function AddStory() {
             </label>
           </div>
         </div>
-        <button className="submitbtn my-4"
-         onClick={submitStory}
-         >
+        <button className="submitbtn my-4" onClick={submitStory}>
           Submit
         </button>
       </div>

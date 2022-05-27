@@ -1,6 +1,10 @@
 .navBar{
     background-color: #ffffff;
     box-shadow: 5px 5px 5px  #88888836;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* margin-bottom: 20px; */
 }
 .navBar .logo{
     height: 65px;
@@ -8,7 +12,7 @@
 }
 .navBar .logo-text{
     font-weight: 700;
-    font-size: 25px !important;
+    font-size: 25px ;
 }
 .navBar ul{
     list-style: none;
@@ -56,4 +60,57 @@
     color: #48cae4;
     background-color: white;
     border: 1px solid #48cae4;
+}
+.navBar .navItems .responsive{
+    display: none !important;
+}
+@media (max-width:1121px) {
+    .navBar .login-signup li span{
+        display: none;
+    }
+    .navBar .login-signup li i{
+        font-size: 20px;
+    }
+}
+@media (max-width:1055px) {
+    .navBar .logo-text{
+        font-size: 20px;
+    }
+    .navBar .navItems ul li{
+        font-size: 10px;
+    }
+    .navBar .login-signup li,button{
+        font-size: 15px;
+        margin: 0 !important;
+    }
+}
+
+@media (max-width:768px) {
+    .navBar .navItems{
+        position: fixed !important;
+        bottom: 0;
+        z-index: 100;
+        top: inherit;
+        background-color: white;
+        width: 100%;
+    }
+    .navBar .navItems ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly !important;
+    }
+    .navBar .navItems ul li span{
+        font-size: 8px;
+        /* display: none; */
+    }
+    .navBar .navItems ul li i.responsive{
+        display: block !important;
+    } 
+}
+
+@media (max-width:365px) {
+    .navBar .navItems ul li span{
+        font-size: 8px;
+        display: none;
+    }
 }

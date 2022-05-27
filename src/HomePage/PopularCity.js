@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { PopularCityCards } from "../assets/Components/Cards/Cards";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
+import Loader from "../assets/Components/Loader/Loader";
 export default function Recommend() {
   const location = useHistory();
   const [loading,setLoading] = useState(true);
@@ -32,7 +32,7 @@ export default function Recommend() {
       </div>
       <div className="destinations d-flex flex-wrap ">
         {
-          loading ? 'loading' 
+          loading ? <Loader/>
           : 
           countryData.map((item) => {
             // console.log(item);

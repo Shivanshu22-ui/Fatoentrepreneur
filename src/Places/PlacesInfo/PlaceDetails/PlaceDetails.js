@@ -6,6 +6,7 @@ import Footer from "../../../assets/Components/Footer/Footer"
 import { PlacesCards, NearbyCard } from "../../../assets/Components/Cards/Cards";
 import { NavLink, Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Loader from "../../../assets/Components/Loader/Loader";
 
 function PlaceDetails() {
   let {placeID} = useParams();
@@ -67,7 +68,7 @@ function PlaceDetails() {
   return (
     
     <>
-    {loading ? 'Loading' : 
+    {loading ? <Loader/> : 
       <div className="PlacesDetails">
         <Carousel
           show={3}

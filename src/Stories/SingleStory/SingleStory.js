@@ -8,6 +8,7 @@ import Sidebar from "../sidebar/Sidebar";
 import Footer from "../../assets/Components/Footer/Footer";
 import Posts from "../posts/Posts";
 import Post from "../post/Post";
+import Loader from "../../assets/Components/Loader/Loader";
 
 function SingleStory() {
   const content=`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
@@ -40,7 +41,7 @@ function SingleStory() {
   // }
 
   return (
-    loading?'loading':
+    loading? <Loader/>:
     <div>
       <div className="singlestoryhead container-fluid my-2">
         <img
@@ -50,7 +51,7 @@ function SingleStory() {
       </div>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-8 m-0">
+          <div className="col-md-8 col-sm-12 m-0">
             <div className="storyHeading my-5">
               <span className="postTitle">
                 <h2 className="text-center">
@@ -65,7 +66,7 @@ function SingleStory() {
           
             </div>
           </div>
-          <div className="col-4">
+          <div className="col-md-4 col-sm-12">
             <div className="sidebar">
               <Sidebar image="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/11/aboutme.jpg" />
             </div>

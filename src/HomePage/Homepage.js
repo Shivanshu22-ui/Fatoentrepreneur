@@ -70,7 +70,7 @@ function Homepage() {
   }
 `;
   return (
-    <div className='container-fluid p-0 overflow-x-hidden'>
+    <div className='container-fluid p-0 overflow-x-hidden '>
       <div className="home px-5 d-flex align-items-center justify-content-center flex-wrap">
       <div className="herobgImage mt-4  d-flex align-items-center justify-content-center ">
         <img src={bgimage} alt="" />

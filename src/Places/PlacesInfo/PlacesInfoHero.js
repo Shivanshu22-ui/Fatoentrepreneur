@@ -8,8 +8,8 @@ function PlacesInfoHero(props) {
   
   return (
     <div className="container">
-      <div className="row placesInfoHero d-flex justify-content-center flex-wrap">
-        <div className="col-5  ">
+      <div className="row placesInfoHero d-flex justify-content-center flex-wrap justify-content-sm-center">
+        <div className="col-md-5 col-sm-12 d-flex flex-column flex-wrap justify-content-sm-center">
           <div className="placeTitle">
             <h3>{props.city.city}</h3>
             <p>{props.city.country}</p>
@@ -41,7 +41,7 @@ function PlacesInfoHero(props) {
               </ul>
           </div>
         </div>
-        <div className="col-7 ">
+        <div className="col-md-7 col-sm-12 carousel-main">
           <Carousel
             className="carousel"
             slides={imageData}

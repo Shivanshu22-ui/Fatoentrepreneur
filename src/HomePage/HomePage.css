@@ -28,3 +28,29 @@
 .home .content h1{
     font-size: 2.3rem;
 }
+@media (max-width:820px) {
+    .herobgImage img{
+        height: 45vh;
+    }
+    .home .content h1{
+        font-size: 1.3rem;
+    }
+    .home .content p{
+        font-size: 1rem;
+    }
+}
+@media  (max-width:600px){
+    .herobgImage img{
+        width: 100%;
+        filter: brightness(60%);
+        display: none;
+    }
+    .home .content h1{
+        color:#0077b6 ;
+        font-size: 2.3rem;
+    }
+    .home .content p{
+        color: #474545;
+        font-size: 1.1rem;
+    }
+}

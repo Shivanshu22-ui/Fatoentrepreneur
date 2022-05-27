@@ -10,6 +10,7 @@ import PlaceContentMain from "./PlaceContentMain";
 import PlaceInfoNav from "./PlaceInfoNav";
 import Footer from "../../assets/Components/Footer/Footer";
 import { PlacesCards } from "../../assets/Components/Cards/Cards";
+import Loader from "../../assets/Components/Loader/Loader";
 
 function PlacesInfo({match}) {
   const location = useHistory();
@@ -46,7 +47,7 @@ function PlacesInfo({match}) {
   }
 
   return (
-    loading ? 'loading' : 
+    loading ? <Loader/> : 
     <div className="container-fluid p-0">
       <div className="placesInfo">
         <PlacesInfoHero city={cityData}/>
@@ -57,7 +58,7 @@ function PlacesInfo({match}) {
        <div className="placesCards d-flex flex-wrap justify-content-start align-items-center">
         
         <hr />
-        { loadingPlaces ? 'Loading' :
+        { loadingPlaces ? <Loader/> :
           placesData.filter((item) => {
             return item.city._id==cityID //All places which have same city as their location will get filtered out
           })

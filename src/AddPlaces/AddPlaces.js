@@ -72,15 +72,38 @@ function AddPlaces() {
     }));
     e.preventDefault();
   };
+
+  const feature=[];
   const [checked,setChecked]=useState(true)
-  const onCheck=()=>{
-    setChecked(!checked);
-    if(checked){
-     console.log("checked")
-     } else{
-     console.log('not checked')
-     }
+  const onCheck=(e)=>{
+    if(e.target.checked){
+      feature.push(e.target.value)
+    }else{
+      for(let i=0 ;i<feature.length;i++){
+        if(feature[i]===e.target.value){
+          feature.splice(i,1)
+        }
+      }
+    }
   }
+
+  const [category,setCategory]=useState('');
+  const [placetype,setPlaceType]=useState('');
+  console.log(category,placetype);
+
+  const image = [];
+  const [picked, setPicked] = useState(false);
+  const fileUpload = (e) => {
+    if (!picked) {
+      image.push(e.target.files);
+      setPicked(true);
+    } else {
+      while (image.length != 0) {
+        image.pop();
+      }
+    }
+  };
+
 
   const submitPlaces = () => {
     const data = {
@@ -88,6 +111,9 @@ function AddPlaces() {
       price: formData.price,
       stayTime: formData.stayTime,
       description: formData.description,
+      features:feature,
+      subCategory:placetype,
+      images:image,
       contact: {
         address: formData.address,
         email: formData.email,
@@ -99,7 +125,6 @@ function AddPlaces() {
         twitterURL: formData.twitterURL,
       },
     };
-
     async function postData(url = "", data = {}) {
       console.log(data);
       const response = await fetch(url, {
@@ -191,33 +216,43 @@ function AddPlaces() {
           </div>
           <div className="fields my-4">
             <label htmlFor="place">
+              <h6>
+                Image <span>(Your can select multiple files**)</span>
+              </h6>
+              <input
+                type="file"
+                multiple
+                name="files"
+                placeholder="select multiple files"
+                onChange={fileUpload}
+              />
+            </label>
+          </div>
+          <div className="fields my-4">
+            <label htmlFor="place">
               <h6>Category*</h6>
-              <select placeholder="select Category">
+              <select placeholder="select Category" onChange={(e)=>setCategory(e.target.value)}>
                 <option value="">Select Category</option>
                 <option
                   value="Food and Drink"
-                  onClick={onCheck}
                   name="category"
                 >
                   Food and Drink
                 </option>
                 <option
                   value="See & Do"
-                  onClick={onCheck}
                   name="category"
                 >
                   See & do
                 </option>
                 <option
                   value="Shopping"
-                  onClick={onCheck}
                   name="category"
                 >
                   Shopping
                 </option>
                 <option
                   value="Stay"
-                  onClick={onCheck}
                   name="category"
                 >
                   Stay
@@ -228,7 +263,7 @@ function AddPlaces() {
           <div className="fields my-4">
             <label htmlFor="place">
               <h6>Place type*</h6>
-              <select placeholder="select Category">
+              <select placeholder="select Category" onChange={(e)=>setPlaceType(e.target.value)}>
                 <option value="">Select type</option>
                 <option value="Activity">Activity</option>
                 <option value="Apartment">Apartment</option>

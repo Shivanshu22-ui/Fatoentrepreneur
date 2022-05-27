@@ -16,6 +16,7 @@ import Login from "./LoginSignup/LoginPage";
 import AddPlaces from "./AddPlaces/AddPlaces";
 import VerifyOTP from "./LoginSignup/VerifyOTP";
 import AddInfo from "./AddPlaces/AddInfo";
+import Loader from "./assets/Components/Loader/Loader";
 
 
 
@@ -28,7 +29,6 @@ function App() {
         <Switch>
           <Route exact path="/Places">
             <Places />
-            {/* <UserDashBoard/> */}
           </Route>
           <Route exact path="/city/:cityName/:cityID">
             <PlacesInfo />

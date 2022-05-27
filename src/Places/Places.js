@@ -7,6 +7,7 @@ import DropDownNav from "./Navbarmenu";
 import "./Places.css";
 import { PlacesCards } from "../assets/Components/Cards/Cards";
 import PlacesInfo from "./PlacesInfo/PlacesInfo";
+import Loader from "../assets/Components/Loader/Loader";
 
 function Places() {
   const location = useHistory();
@@ -97,14 +98,14 @@ function Places() {
   return (
     <>
     <div className="places">
-      <DropDownNav />
+      {/* <DropDownNav /> */}
       <h3 className=" mt-4 mx px-5 container-fluid chgedcolor">
         Recommended For You
       </h3>
       <div className="placesCards d-flex flex-wrap justify-content-start align-items-center">
         <hr />
         
-        { loading?'Loading':placeData.map((places, index) => {
+        { loading?<Loader/>:placeData.map((places, index) => {
           return (
            
             <PlacesCards
@@ -137,7 +138,7 @@ function Places() {
             />
           );
         })} */}
-        { loading?'Loading':placeData.map((places, index) => {
+        { loading?<Loader/>:placeData.map((places, index) => {
           return (
             <PlacesCards
               clickHandler={() => clickHandler(places)}

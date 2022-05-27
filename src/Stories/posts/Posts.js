@@ -3,6 +3,7 @@ import { NavLink, Link, useParams, useHistory } from "react-router-dom";
 
 import Post from "../post/Post";
 import "./posts.css";
+import Loader from "../../assets/Components/Loader/Loader";
 
 export default function Posts() {
   const location = useHistory();
@@ -18,12 +19,9 @@ export default function Posts() {
       .then((res) => res.json())
       .then((json) => {
         setStoryData(json.result);
-        // console.log(json.result);
-        // console.log(json.result[0].category);
         setLoading(false);
       });
   }, []);
-  // console.log(storydata);
 
   const content = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
   officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
@@ -32,7 +30,7 @@ export default function Posts() {
   return (
     <div className="posts">
       {loading
-        ? "loading"
+        ? <Loader/>
         : storydata.map((story, index) => {
             return (
               <Post
@@ -47,46 +45,6 @@ export default function Posts() {
               />
             );
           })}
-
-      {/* <Post 
-      img="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-      place="London"
-      category="Stay"
-      topic="Lorem ipsum dolor sit amet"
-      timeposted="1"
-      content={content} />
-
-      <Post 
-      img="https://images.pexels.com/photos/6758029/pexels-photo-6758029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-       place="Paris"
-      category="Food"
-      topic="Lorem ipsum dolor sit amet"
-      timeposted="2"
-      content={content} />
-      
-      <Post 
-      img="https://images.pexels.com/photos/6711867/pexels-photo-6711867.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-      place="India"
-      category="Travel"
-      topic="Lorem ipsum dolor sit amet"
-      timeposted="1.5"
-      content={content}/>
-
-      <Post 
-      img="https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-      place="London"
-      category="stay"
-      topic="Lorem ipsum dolor sit amet"
-      timeposted="3"
-      content={content}/>
-
-      <Post 
-      img="https://images.pexels.com/photos/4916559/pexels-photo-4916559.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-      place="London"
-      category="stay"
-      topic="London  ipsum dolor sit amet "
-      timeposted="2"
-      content={content}/> */}
     </div>
   );
 }

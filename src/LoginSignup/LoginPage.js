@@ -35,11 +35,12 @@ function LoginPage() {
     console.log(signUpData);
   };
 
-  const submitSignUp = () => {
+  const submitSignUp = (e) => {
+    e.preventDefault();
     const data = {
       airline: signUpData.airline,
       firstName: signUpData.firstName,
-      lastName: "",
+      lastName: "1",
       password: signUpData.password,
       email: signUpData.email,
     };
@@ -66,6 +67,7 @@ function LoginPage() {
       data
     ).then((res) => {
       console.log("Response Message", res);
+      alert('Response msg',res)
     });
   };
 
@@ -83,6 +85,7 @@ function LoginPage() {
     }));
     e.preventDefault();
   };
+console.log(signInData)
 
   const submitSignIn = () => {
     const data = {
@@ -112,6 +115,7 @@ function LoginPage() {
       data
     ).then((res) => {
       console.log("Response Message", res);
+      alert(res)
     });
   };
 
@@ -185,12 +189,13 @@ function LoginPage() {
               </a>
             </div>
             <span>or use your account</span>
-            <input className="loginInput" type="email" placeholder="Email" required name="logEmail" />
+            <input className="loginInput" type="email" placeholder="Email" required name="logEmail" onClick={LoginDataChangeHandler} />
             <input
               className="loginInput"
               type="password"
               placeholder="Password"
               name="logPassword"
+              onClick={LoginDataChangeHandler}
               required
             />
             <a href="#">Forgot your password?</a>

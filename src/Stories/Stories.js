@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{ useEffect, useState } from 'react'
 import Footer from '../assets/Components/Footer/Footer';
 import Posts from './posts/Posts';
 import Sidebar from './sidebar/Sidebar';
@@ -6,6 +6,7 @@ import "./Stories.css"
 
 
 function Stories() {
+
   return (
     <div>
     <div className='container-fluid'>
@@ -22,7 +23,7 @@ function Stories() {
     </div>
       <div className="d-flex row">
         <div className="col-lg-8 col-md-8 col-sm-12">
-        <Posts/>
+        <Posts />
         </div>
         <div className="sidebar d-flex col-lg-4 col-md-4 col-sm-12">
         <Sidebar image= 'https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/11/aboutme.jpg'/>
