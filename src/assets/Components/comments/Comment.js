@@ -1,6 +1,6 @@
 import CommentForm from "./CommentForm";
 
-import userImg from './user-icon.png';
+import userImg from "./user-icon.png";
 
 const Comment = ({
   comment,
@@ -13,6 +13,7 @@ const Comment = ({
   parentId = null,
   currentUserId,
 }) => {
+  console.log(replies);
   const isEditing =
     activeComment &&
     activeComment.id === comment.id &&
@@ -32,14 +33,19 @@ const Comment = ({
   return (
     <div key={comment.id} className="comment">
       <div className="comment-image-container">
-        <img src={userImg}/>
+        <img src={userImg} />
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
-          <div className="comment-author">{comment.username}</div>
-          <div>{createdAt}</div>
+          <div className="comment-author">{comment.createdBy.firstName}</div>
+          <div>
+            {comment.createdBy.createdAt.substring(0, 10)}{" "}
+            {comment.createdBy.createdAt.substring(11, 16)}
+          </div>
         </div>
-        {!isEditing && <div className="comment-text">{comment.body}</div>}
+        {!isEditing && (
+          <div className="comment-text">{comment.description}</div>
+        )}
         {isEditing && (
           <CommentForm
             submitLabel="Update"
@@ -52,16 +58,17 @@ const Comment = ({
           />
         )}
         <div className="comment-actions">
-          {canReply && (
+          {sessionStorage.getItem("userLoginData") &&
+          JSON.parse(sessionStorage.getItem("userLoginData")).isLoginSuccess ? (
             <div
               className="comment-action"
               onClick={() =>
                 setActiveComment({ id: comment.id, type: "replying" })
               }
             >
-              Reply 
+              Reply
             </div>
-          )}
+          ) : null}
           {canEdit && (
             <div
               className="comment-action"

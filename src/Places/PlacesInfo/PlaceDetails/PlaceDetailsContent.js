@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState, usestate } from "react";
 import "./PlaceDetailsContent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Accordion from "react-bootstrap/Accordion";
-import { PlacesCards, NearbyCard } from "../../../assets/Components/Cards/Cards";
+import {
+  PlacesCards,
+  NearbyCard,
+} from "../../../assets/Components/Cards/Cards";
 import PlaceDetailsReviews from "./PlaceDetailsReviews";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useHistory } from "react-router-dom";
 import Comments from "../../../assets/Components/comments/Comments";
 
-function PlaceDetailsContent({ place , comments }) {
-  // console.log(comments);
+function PlaceDetailsContent({ place, comments, placeID, setPlaceComments }) {
+  const [likes, setLikes] = useState(false);
+
+  const history = useHistory();
+  const userLoginData = JSON.parse(sessionStorage.getItem("userLoginData"));
+  console.log(placeID);
   return (
     <div className="container placeDetailsContent">
       <nav className="miniNav">
@@ -21,6 +28,12 @@ function PlaceDetailsContent({ place , comments }) {
         {place.category}{" "}
         <span>
           <i class="fa-regular fa-circle-check verified mx-3"></i>
+          <i
+            class={`fa-${likes ? "solid" : "regular"} fa-heart redHeart mx-3`}
+            onClick={() => {
+              setLikes(!likes);
+            }}
+          ></i>
         </span>
       </p>
       <div className="d-flex place-info-details">
@@ -141,15 +154,28 @@ function PlaceDetailsContent({ place , comments }) {
       </div>
       <div className="placeReviews">
         {/* <PlaceDetailsReviews /> */}
-        <Comments   currentUserId="1" comment={comments}/>
-        
-        <p style={{ fontSize: "14px", fontWeight: "600", color: "#474545" }}>
-          {" "}
-          <span style={{ color: "#23d3d3" }}>Login</span> to review
-        </p>
-      </div>
+        <Comments
+          currentUserId="1"
+          userLoginData={userLoginData}
+          comment={comments}
+          placeID={placeID}
+          place={place}
+          setPlaceComments={setPlaceComments}
+        />
 
-      
+        {userLoginData && userLoginData.isLoginSuccess ? null : (
+          <p style={{ fontSize: "14px", fontWeight: "600", color: "#474545" }}>
+            {" "}
+            <span
+              onClick={() => history.push("/login")}
+              style={{ color: "#23d3d3", cursor: "pointer" }}
+            >
+              Login
+            </span>{" "}
+            to review
+          </p>
+        )}
+      </div>
     </div>
   );
 }
