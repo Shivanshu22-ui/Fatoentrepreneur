@@ -13,21 +13,22 @@ const Comment = ({
   parentId = null,
   currentUserId,
 }) => {
-  console.log(replies);
+  console.log(replies , comment._id);
+
   const isEditing =
     activeComment &&
-    activeComment.id === comment.id &&
+    activeComment.id === comment._id &&
     activeComment.type === "editing";
   const isReplying =
     activeComment &&
-    activeComment.id === comment.id &&
+    activeComment.id === comment._id &&
     activeComment.type === "replying";
   const fiveMinutes = 300000;
   const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
   const canDelete =
-    currentUserId === comment.userId && replies.length === 0 && !timePassed;
-  const canReply = Boolean(currentUserId);
-  const canEdit = currentUserId === comment.userId && !timePassed;
+    currentUserId === comment._id && replies.length === 0 && !timePassed;
+  const canReply = Boolean(comment._id);
+  const canEdit = currentUserId === comment._id && !timePassed;
   const replyId = parentId ? parentId : comment.id;
   const createdAt = new Date(comment.createdAt).toLocaleDateString();
   return (
@@ -51,7 +52,7 @@ const Comment = ({
             submitLabel="Update"
             hasCancelButton
             initialText={comment.body}
-            handleSubmit={(text) => updateComment(text, comment.id)}
+            handleSubmit={(text) => updateComment(text, comment._id)}
             handleCancel={() => {
               setActiveComment(null);
             }}
@@ -59,21 +60,22 @@ const Comment = ({
         )}
         <div className="comment-actions">
           {sessionStorage.getItem("userLoginData") &&
-          JSON.parse(sessionStorage.getItem("userLoginData")).isLoginSuccess ? (
+          JSON.parse(sessionStorage.getItem("userLoginData")).isLoginSuccess ? <div>
+          {canReply &&  (
             <div
               className="comment-action"
               onClick={() =>
-                setActiveComment({ id: comment.id, type: "replying" })
+                setActiveComment({ id: comment._id, type: "replying" })
               }
             >
               Reply
             </div>
-          ) : null}
+          ) }
           {canEdit && (
             <div
               className="comment-action"
               onClick={() =>
-                setActiveComment({ id: comment.id, type: "editing" })
+                setActiveComment({ id: comment._id, type: "editing" })
               }
             >
               Edit
@@ -82,11 +84,12 @@ const Comment = ({
           {canDelete && (
             <div
               className="comment-action"
-              onClick={() => deleteComment(comment.id)}
+              onClick={() => deleteComment(comment._id)}
             >
               Delete
             </div>
           )}
+</div> : null}
         </div>
         {isReplying && (
           <CommentForm
