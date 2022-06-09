@@ -58,7 +58,7 @@ const Comments = ({
       return response.json();
     }
 
-    console.log("here",replyId,text)
+    // console.log("here",replyId,text)
 
     const data = replyId ? {
       placeId: placeID,
@@ -72,6 +72,8 @@ const Comments = ({
       description: text,
       type: isStory ? "story" : "place",
     };
+
+    // console.log(data);
 
     postData(replyId ? "https://fatoentrepreneur.herokuapp.com/comments/child" : "https://fatoentrepreneur.herokuapp.com/comments",data).then(
       (res) => {

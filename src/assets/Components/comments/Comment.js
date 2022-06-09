@@ -97,7 +97,7 @@ const Comment = ({
         {isReplying && (
           <CommentForm
             submitLabel="Reply"
-            handleSubmit={(text) => {addComment(text, comment._id);setActiveComment({})}}
+            handleSubmit={(text) => {addComment(text, comment.parentCommentId ? comment.parentCommentId : comment._id);setActiveComment({})}}
           />
         )}
         {replies.length > 0 && (

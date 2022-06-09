@@ -27,16 +27,15 @@ function AddStory() {
     }));
   };
 
-
   const image = [];
   const [picked, setPicked] = useState();
   const fileUpload = (e) => {
     e.preventDefault();
 
     console.log(e.target.files);
-    const [f]=e.target.files;
-    setPicked(f)
-      // image.push(e.target.files);
+    const [f] = e.target.files;
+    setPicked(f);
+    // image.push(e.target.files);
     // if (!picked) {
     //   setPicked(true);
     // } else {
@@ -46,8 +45,7 @@ function AddStory() {
     //   setPicked(false);
     // }
   };
-// console.log(picked,category)
-
+  // console.log(picked,category)
 
   const submitStory = (e) => {
     e.preventDefault();
@@ -69,7 +67,7 @@ function AddStory() {
         twitterURL: formData.twitterURL,
       },
     };
-console.log(data)
+    console.log(data);
     async function postData(url = "", data = {}) {
       console.log(data);
       const response = await fetch(url, {
