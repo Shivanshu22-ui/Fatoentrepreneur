@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./AddPlaces.css";
 
 function AddStory() {
+  const userLoginData = JSON.parse(sessionStorage.getItem("userLoginData"));
   const [formData, setFormData] = useState({
     storyName: "",
     city: "",
@@ -55,17 +56,8 @@ function AddStory() {
       country: formData.country,
       description: formData.description,
       subCategory: category,
-      images: picked,
-      contact: {
-        address: formData.address,
-        email: formData.email,
-        phone1: formData.phone1,
-        phone2: formData.phone1,
-        website: formData.website,
-        facebookURL: formData.facebookURL,
-        instagramURL: formData.instagramURL,
-        twitterURL: formData.twitterURL,
-      },
+      category: category,
+      images: picked
     };
     console.log(data);
     async function postData(url = "", data = {}) {
@@ -77,6 +69,7 @@ function AddStory() {
         credentials: "same-origin",
         headers: {
           "Content-Type": "application/json",
+          "accessToken" : userLoginData.accessToken
         },
         redirect: "follow",
         referrerPolicy: "no-referrer",

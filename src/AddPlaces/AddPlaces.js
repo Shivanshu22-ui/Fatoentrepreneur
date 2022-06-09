@@ -7,7 +7,7 @@ import Footer from "../assets/Components/Footer/Footer";
 
 function AddPlaces() {
   const userLoginData = JSON.parse(sessionStorage.getItem("userLoginData"));
-  console.log(userLoginData)
+  // console.log(userLoginData)
   const highlights = [
     {
       id: "wifi",
@@ -91,7 +91,7 @@ function AddPlaces() {
 
   const [category,setCategory]=useState('');
   const [placetype,setPlaceType]=useState('');
-  console.log(category,placetype);
+  // console.log(category,placetype);
 
   const image = [];
   const [picked, setPicked] = useState(false);
@@ -125,9 +125,9 @@ function AddPlaces() {
       },
     };
 
-    console.log(data);
+    // console.log(data);
     async function postData(url = "", data = {}) {
-      console.log(data);
+      // console.log(data);
       const response = await fetch(url, {
         method: "POST",
         mode: "cors",
@@ -144,14 +144,14 @@ function AddPlaces() {
       return response.json();
     }
 
-    console.log("Clicked");
+    // console.log("Clicked");
 
     postData(
       "https://fatoentrepreneur.herokuapp.com/places/add",
       data
     ).then((res) => {
-      console.log("Ho toh raha hai")
-      console.log("Response Message", res);
+      // console.log("Ho toh raha hai")
+      // console.log("Response Message", res);
     });
   };
 
