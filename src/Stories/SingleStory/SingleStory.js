@@ -19,6 +19,7 @@ function SingleStory() {
 
   let { storyID } = useParams();
   const [storyData, setStoryData] = useState([]);
+  const [storyComment,setStoryComment] = useState([]);
   const [loading, setLoading] = useState(true);
   const [likes, setLikes] = useState(false);
 
@@ -30,6 +31,13 @@ function SingleStory() {
         setStoryData(json.story);
         // console.log(json.story)
         setLoading(false);
+      });
+
+    fetch(`https://fatoentrepreneur.herokuapp.com/comments/stories?id=${storyID}`)
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json)
+        setStoryComment(json.result);
       });
   }, []);
 
@@ -80,7 +88,7 @@ function SingleStory() {
             </div>
           </div>
           <div className="px-4 col-6">
-            <Comments currentUserId={1} />
+            <Comments setStoryComment={setStoryComment} placeID={storyID} comment={storyComment} isStory={true} currentUserId={1} />
           </div>
           <div className="otherStories">
             <h2 className="m-4">

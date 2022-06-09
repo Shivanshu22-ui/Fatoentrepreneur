@@ -10,13 +10,13 @@ import {
 } from "./api";
 
 const Comments = ({
-  commentsUrl,
   currentUserId,
   comment,
   userLoginData,
   placeID,
-  place,
   setPlaceComments,
+  setStoryComment,
+  isStory = false,
 }) => {
   const history = useHistory();
   const [backendComments, setBackendComments] = useState([]);
@@ -28,18 +28,20 @@ const Comments = ({
     (backendComment) => backendComment.parentCommentId === null
   );
 
+  userLoginData = JSON.parse(sessionStorage.getItem("userLoginData"));
+
   // console.log(placeID)
-  const getReplies = (commentId) =>
+  const getReplies = (commentId) => 
     backendComments
       .filter((backendComment) => backendComment.parentCommentId === commentId)
       .sort(
         (a, b) =>
           new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
       );
-
-  const addComment = (text) => {
+  
+  const addComment = (text,replyId) => {
     async function postData(url = "", data = {}) {
-      console.log(data);
+      // console.log(data);
       const response = await fetch(url, {
         method: "POST",
         mode: "cors",
@@ -56,21 +58,34 @@ const Comments = ({
       return response.json();
     }
 
-    const data = {
+    console.log("here",replyId,text)
+
+    const data = replyId ? {
       placeId: placeID,
       description: text,
-      type: "place",
+      type: isStory ? "story" : "place",
+      parentCommentId: replyId
+    } 
+    :
+    {
+      placeId: placeID,
+      description: text,
+      type: isStory ? "story" : "place",
     };
 
-    postData("https://fatoentrepreneur.herokuapp.com/comments", data).then(
+    postData(replyId ? "https://fatoentrepreneur.herokuapp.com/comments/child" : "https://fatoentrepreneur.herokuapp.com/comments",data).then(
       (res) => {
+        console.log("working?",res)
         fetch(
-          `https://fatoentrepreneur.herokuapp.com/comments/places?id=${placeID}`
+          `https://fatoentrepreneur.herokuapp.com/comments/${
+            isStory ? `stories` : "places"
+          }?id=${placeID}`
         )
           .then((res) => res.json())
           .then((json) => {
-            //  console.log(json.result)
-            setPlaceComments(json.result);
+            // console.log(json.result)
+            // console.log("Working!",placeID,isStory,json);
+            isStory ? setStoryComment(json.result) : setPlaceComments(json.result);
           });
       }
     );
